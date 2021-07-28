@@ -1,0 +1,3256 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command-line to run this workspace:
+#        "C:\Program Files (x86)\fme\fme2020.0_b20200\fme.exe" C:\FGP\Travaux\broken_links\Detection_BrokenLinks.fmw
+#              --IN_CHOICE_JURIDICTION "Tout"
+#              --IN_OUT_POSTGRES_CONNECTION "FGP_data_AWS"
+#              --OUT_XLS_ERREUR_FORMAT "/Broken_Links/erreur_format.xlsx"
+#              --LOG_FILE "/Broken_Links/detection.log"
+#              --Env_Catalogue "https:<solidus><solidus>maps.canada.ca<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw?"
+#    
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="VISUALIZER"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="6223.09 2894"
+#!   DOC_TOP_LEFT="-1866.52 -2880.14"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="20200"
+#!   FME_DOCUMENT_GUID="07dd7710-891c-431f-a146-4691d1eb8d25"
+#!   FME_DOCUMENT_PRIORGUID="d78a1fda-a803-448f-9e20-6c47091e59ae,23036b54-8b72-47f7-b877-fda822155aae,3eef5095-b2d2-4a30-82f9-89ab614ac679,7b80258f-1b16-486f-9616-6c396e9839d3,124c8ca3-c5e9-4938-869c-45fb51623dcf,aa016a71-4b67-4a08-8f93-09210d0a8caf,e2cbe97f-76bc-4b53-b987-b2cff162894d,d9c5ace8-2bbe-4917-a4f6-e1c2774cfc2b,1afeb455-6673-43a8-a230-5339ab983ef1,4afb7330-713f-41b4-99f7-c2df4bfd035d"
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2020.0.0.0 (20200309 - Build 20200 - WIN32)"
+#!   LAST_SAVE_DATE="2021-06-10T15:40:17"
+#!   LOG_FILE="$(LOG_FILE)"
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="157.314 416.671"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="49"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="POSTGRES"
+#!   DATASET="$(IN_OUT_POSTGRES_CONNECTION)"
+#!   KEYWORD="POSTGRES_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="postgres_type {FME_GEN_GEOMETRY} postgres_sql_where_clause &quot;&quot; postgres_sql_statement &quot;&quot;"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_geometry char(50) fme_type char(50) fme_start_angle float8 fme_text_string char(50) fme_secondary_axis float8 multi_reader_id int4 multi_reader_full_id int4 fme_sweep_angle float8 fme_dataset char(50) fme_fill_color char(50) fme_color char(50) fme_text_size float8 fme_basename char(50) multi_reader_type char(50) postgres_type char(50) fme_primary_axis float8 fme_feature_type char(50) multi_reader_keyword char(50) postgres_oid int4 fme_rotation float8"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP postgres_query_settings_group postgres_sql_where_clause%postgres_sql_statement Table&quot; &quot;&quot; &quot;GUI OPTIONAL TEXT_EDIT_SQL_CFG postgres_sql_where_clause MODE,WHERE;FORMAT,POSTGRES WHERE Clause&quot; &quot;&quot; &quot;GUI OPTIONAL TEXT_EDIT_SQL_CFG postgres_sql_statement MODE,SQL;FORMAT,POSTGRES SELECT Statement&quot; &quot;&quot; "
+#!   ATTR_INDEX_TYPES="BTree RTree Hash PrimaryKey"
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="DATABASE"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   NAME="FGP_data_AWS"
+#!   COORDSYS=""
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="POSTGRES_IN_FEATURES_PER_FETCH POSTGRES_IN_BEGIN_SQL POSTGRES_IN_END_SQL POSTGRES_OUT_BULK_COPY POSTGRES_OUT_TRANSACTION_INTERVAL POSTGRES_OUT_BEGIN_SQL POSTGRES_OUT_END_SQL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE_ATTRS"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING_HISTORIC"
+#!   VALUE="ALL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="Database"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Table1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Table"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_AUTHENTICATION"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_PROXY"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="PARAMS_TO_NOT_PROPAGATE_ON_INSPECT"
+#!   VALUE="BEGIN_SQL END_SQL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME"
+#!   VALUE="YES"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="XLSXW"
+#!   DATASET="$(OUT_XLS_ERREUR_FORMAT)"
+#!   KEYWORD="XLSXW_1"
+#!   MULTI_GEOM_ALLOWED="true"
+#!   ATTR_MAX_LENGTH="255"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="xlsx_drop_sheet No xlsx_trunc_sheet No xlsx_sheet_order &quot;&quot; xlsx_freeze_end_row &quot;&quot; xlsx_names_are_positions No xlsx_field_names_out Yes xlsx_start_col &quot;&quot; xlsx_start_row &quot;&quot; xlsx_offset_col &quot;&quot; xlsx_offset_row &quot;&quot; xlsx_raster_type PNG xlsx_table_writer_mode Insert xlsx_row_id_column &quot;&quot; xlsx_protect_sheet &quot;NO&quot; xlsx_protect_sheet_level &quot;&lt;Unused&gt;&quot; xlsx_protect_sheet_password &quot;&lt;Unused&gt;&quot; xlsx_protect_sheet_permissions &quot;&lt;Unused&gt;&quot;"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="xlsx_col_id number(width,xlsx_col_props) fme_geometry string(50) fme_type string(50) fme_start_angle number(width,xlsx_col_props) xlsx_type string(width,xlsx_col_props) fme_text_string string(50) fme_db_operation string(width,xlsx_col_props) fme_secondary_axis number(width,xlsx_col_props) fme_sweep_angle number(width,xlsx_col_props) fme_dataset string(50) fme_fill_color string(50) fme_color string(50) fme_text_size number(width,xlsx_col_props) fme_basename string(50) xlsx_raster_height number(width,xlsx_col_props) xlsx_row_formatting string(width,xlsx_col_props) fme_primary_axis number(width,xlsx_col_props) fme_feature_type string(50) xlsx_row_id number(width,xlsx_col_props) xlsx_raster_scale_factor number(width,xlsx_col_props) xlsx_raster_width number(width,xlsx_col_props) fme_rotation number(width,xlsx_col_props)"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP xlsx_layer_group xlsx_table_writer_mode%xlsx_field_names_out%xlsx_names_are_positions%xlsx_row_id_column%xlsx_truncate_group%xlsx_table_group%xlsx_rowcolumn_group%xlsx_protect_sheet%xlsx_advanced_group Sheet Settings&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP xlsx_truncate_group xlsx_row_id%xlsx_drop_sheet%xlsx_trunc_sheet Drop/Truncate&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP xlsx_rowcolumn_group xlsx_start_col%xlsx_start_row%xlsx_offset_col%xlsx_offset_row Start Position&quot; &quot;&quot; &quot;GUI ACTIVEDISCLOSUREGROUP xlsx_protect_sheet xlsx_protect_sheet_password%xlsx_protect_sheet_level%xlsx_protect_sheet_permissions Protect Sheet&quot; NO &quot;GUI OPTIONAL DISCLOSUREGROUP xlsx_advanced_group xlsx_sheet_order%xlsx_freeze_end_row%xlsx_raster_type Advanced&quot; &quot;&quot; &quot;GUI CHOICE xlsx_drop_sheet Yes%No Drop Existing Sheet/Named Range:&quot; No &quot;GUI CHOICE xlsx_trunc_sheet Yes%No Truncate Existing Sheet/Named Range:&quot; No &quot;GUI OPTIONAL RANGE_SLIDER xlsx_sheet_order 1%MAX Sheet Order (1 - n):&quot; &quot;&quot; &quot;GUI OPTIONAL RANGE_SLIDER xlsx_freeze_end_row 1%MAX Freeze First Row(s) (1 - n):&quot; &quot;&quot; &quot;GUI CHOICE xlsx_field_names_out Yes%No Output Field Names:&quot; Yes &quot;GUI CHOICE xlsx_names_are_positions Yes%No Use Attribute Names As Column Positions:&quot; No &quot;GUI OPTIONAL TEXT xlsx_start_col Named Range Start Column:&quot; &quot;&quot; &quot;GUI OPTIONAL INTEGER xlsx_start_row Named Range Start Row:&quot; &quot;&quot; &quot;GUI OPTIONAL TEXT xlsx_offset_col Start Column:&quot; &quot;&quot; &quot;GUI OPTIONAL INTEGER xlsx_offset_row Start Row:&quot; &quot;&quot; &quot;GUI CHOICE xlsx_raster_type BMP%JPEG%PNG Raster Format:&quot; PNG &quot;GUI OPTIONAL PASSWORD_ENCODED xlsx_protect_sheet_password Password:&quot; &lt;Unused&gt; &quot;GUI ACTIVECHOICE_LOOKUP xlsx_protect_sheet_level Select&lt;space&gt;Only&lt;space&gt;Permissions,PROT_DEFAULT,xlsx_protect_sheet_permissions%View&lt;space&gt;Only&lt;space&gt;Permissions,PROT_ALL,xlsx_protect_sheet_permissions%Specific&lt;space&gt;Permissions Protection Level:&quot; &lt;Unused&gt; &quot;GUI OPTIONAL LOOKUP_LISTBOX xlsx_protect_sheet_permissions Select&lt;space&gt;locked&lt;space&gt;cells,PROT_SEL_LOCKED_CELLS%Select&lt;space&gt;unlocked&lt;space&gt;cells,PROT_SEL_UNLOCKED_CELLS%Format&lt;space&gt;cells,PROT_FORMAT_CELLS%Format&lt;space&gt;columns,PROT_FORMAT_COLUMNS%Format&lt;space&gt;rows,PROT_FORMAT_ROWS%Insert&lt;space&gt;columns,PROT_INSERT_COLUMNS%Insert&lt;space&gt;rows,PROT_INSERT_ROWS%Add&lt;space&gt;hyperlinks&lt;space&gt;to&lt;space&gt;unlocked&lt;space&gt;cells,PROT_INSERT_HYPERLINKS%Delete&lt;space&gt;unlocked&lt;space&gt;columns,PROT_DELETE_COLUMNS%Delete&lt;space&gt;unlocked&lt;space&gt;rows,PROT_DELETE_ROWS%Sort&lt;space&gt;unlocked&lt;space&gt;cells/rows/columns,PROT_SORT%Use&lt;space&gt;Autofilter&lt;space&gt;on&lt;space&gt;unlocked&lt;space&gt;cells,PROT_AUTOFILTER%Use&lt;space&gt;PivotTable&lt;space&gt;&amp;&lt;space&gt;PivotChart&lt;space&gt;on&lt;space&gt;unlocked&lt;space&gt;cells,PROT_PIVOTTABLES%Edit&lt;space&gt;unlocked&lt;space&gt;objects,PROT_OBJECTS%Edit&lt;space&gt;unprotected&lt;space&gt;scenarios,PROT_SCENARIOS Specific Permissions:&quot; &lt;Unused&gt; &quot;GUI ACTIVECHOICE xlsx_table_writer_mode Insert,+xlsx_row_id_column+%Update,+xlsx_row_id_column+xlsx_row_id%Delete,+xlsx_row_id_column+xlsx_row_id Writer Mode:&quot; Insert &quot;GUI OPTIONAL ATTR xlsx_row_id_column ALLOW_NEW Row Number Attribute:&quot; &quot;&quot; "
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS="\\&quot;*{}$"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILE"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   COORDSYS=""
+#!   FANOUT_EXPRESSION="&lt;Unused&gt;"
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ALLOW_DATASET_CONFLICT"
+#!   VALUE="YES"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="xlsx file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_ATTR_TYPE"
+#!   VALUE="auto"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_READER"
+#!   VALUE="XLSXR"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Sheet1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Sheet"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="MIME_TYPE"
+#!   VALUE="application/vnd.ms-excel ADD_DISPOSITION"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="USER_ATTRIBUTES_COLUMNS"
+#!   VALUE="Width,Cell Width%Precision,Formatting"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a name for the Microsoft Excel file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="POSTGRES"
+#!   DATASET="$(IN_OUT_POSTGRES_CONNECTION)"
+#!   KEYWORD="POSTGRES_2"
+#!   MULTI_GEOM_ALLOWED="true"
+#!   ATTR_MAX_LENGTH="63"
+#!   ATTR_CASE="LOWER"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="postgres_type {FME_GEN_GEOMETRY} postgres_sql_key_columns &quot;&quot; postgres_drop_table &quot;&quot; postgres_truncate_table &quot;&quot; postgres_mode &quot;&quot; fme_feature_operation INSERT fme_table_handling CREATE_IF_MISSING fme_selection_method MATCH_COLUMNS fme_match_columns &quot;&quot; fme_where_builder_clause &quot;&quot; postgres_vacuum_analyze NO postgres_allow_serial_writing NO"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="postgres_type char(50) fme_geometry char(50) fme_feature_type char(50) fme_fill_color char(50) fme_text_string char(50) fme_sweep_angle float8 fme_dataset char(50) fme_color char(50) fme_rotation float8 fme_basename char(50) fme_text_size float8 fme_primary_axis float8 fme_secondary_axis float8 fme_db_operation char(8) fme_type char(50) fme_start_angle float8"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP fme_configuration_group fme_configuration_common_group%fme_spatial_group%fme_advanced_group%oracle_advanced_group Table&quot; &quot;&quot; &quot;GUI OPTIONAL NAMEDGROUP fme_configuration_common_group fme_feature_operation%fme_table_handling%mie_pack%oracle_model%fme_update_geometry%fme_selection_group%fme_table_creation_group General&quot; &quot;&quot; &quot;GUI ACTIVECHOICE_LOOKUP fme_feature_operation Insert,INSERT,fme_update_geometry,fme_selection_group,mie_pack%Update,UPDATE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Delete,DELETE,++fme_table_handling+USE_EXISTING,fme_update_geometry,++fme_selection_group+FME_DISCLOSURE_OPEN,fme_spatial_group,fme_advanced_group,oracle_sequenced_cols%&lt;at&gt;Value&lt;openparen&gt;fme_db_operation&lt;closeparen&gt;,MULTIPLE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN Feature Operation&quot; INSERT &quot;GUI ACTIVECHOICE_LOOKUP fme_table_handling Use&lt;space&gt;Existing,USE_EXISTING,fme_table_creation_group%Create&lt;space&gt;If&lt;space&gt;Needed,CREATE_IF_MISSING%Drop&lt;space&gt;and&lt;space&gt;Create,DROP_CREATE%Truncate&lt;space&gt;Existing,TRUNCATE_EXISTING,fme_table_creation_group Table Handling&quot; CREATE_IF_MISSING &quot;GUI OPTIONAL DISCLOSUREGROUP fme_selection_group fme_selection_method Row Selection&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE RADIOPARAMETERGROUP fme_selection_method fme_match_columns,MATCH_COLUMNS%fme_where_builder_clause,BUILDER Row Selection Method&quot; MATCH_COLUMNS &quot;GUI WHOLE_LINE ATTRLIST_COMMAS fme_match_columns \&quot; \&quot; Match Columns&quot; &quot;&quot; &quot;GUI WHOLE_LINE TEXT_EDIT_SQL_CFG_OR_ATTR fme_where_builder_clause MODE,WHERE WHERE Clause&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP fme_advanced_group postgres_vacuum_analyze%postgres_allow_serial_writing Advanced&quot; &quot;&quot; &quot;GUI CHOICE postgres_vacuum_analyze YES%NO Vacuum Analyze Table&quot; NO &quot;GUI CHOICE postgres_allow_serial_writing YES%NO Allow Serial Column Writing&quot; NO "
+#!   ATTR_INDEX_TYPES="BTree RTree Hash PrimaryKey"
+#!   ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="DATABASE"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   COORDSYS=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="POSTGRES_IN_FEATURES_PER_FETCH POSTGRES_IN_BEGIN_SQL POSTGRES_IN_END_SQL POSTGRES_OUT_BULK_COPY POSTGRES_OUT_TRANSACTION_INTERVAL POSTGRES_OUT_BEGIN_SQL POSTGRES_OUT_END_SQL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE_ATTRS"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING_HISTORIC"
+#!   VALUE="ALL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="Database"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Table1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Table"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_AUTHENTICATION"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_PROXY"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="PARAMS_TO_NOT_PROPAGATE_ON_INSPECT"
+#!   VALUE="BEGIN_SQL END_SQL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME"
+#!   VALUE="YES"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="bool"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="json"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="jsonb"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="bytea"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="bytea"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="bytea"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int2"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int2"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int2"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int4"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int4"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="numeric(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="numeric(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="oid"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="serial"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="float4"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="money"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="float8"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="time"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="timetz"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="timestamp"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="timestamptz"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uuid"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="bit(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varbit"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varbit(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string(width,xlsx_col_props)"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="auto(width,xlsx_col_props)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="datetime(width,xlsx_col_props)"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="time(width,xlsx_col_props)"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date(width,xlsx_col_props)"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,xlsx_col_props)"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="boolean(width,xlsx_col_props)"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="XLSXW"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="bool"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="text"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xml"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="json"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="jsonb"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="bytea"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="bytea"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="bytea"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int2"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int2"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int2"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int4"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int4"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="numeric(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="numeric(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oid"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="serial"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="float4"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="money"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="float8"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="time"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timetz"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamp"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamptz"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uuid"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="bit(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varbit"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="POSTGRES"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varbit(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="POSTGRES"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xlsx_none"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="XLSXW"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="POSTGRES"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="postgres_none"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="POSTGRES"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="FORMAT INVALIDE"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="2"
+#!   FEAT_GEOMTYPE="All"
+#!   POSITION="3563.5261996084419 -1352.7112395264262"
+#!   BOUNDING_RECT="3563.5261996084419 -1352.7112395264262 542.71642982205503 71"
+#!   ORDER="500000000000382.13"
+#!   COLLAPSED="true"
+#!   KEYWORD="XLSXW_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="METADATA_UUID" ATTR_TYPE="string(38,version;1;number_format_string;;font;;font_color;;background_color;;pattern_color;;pattern_style;;CELL_BORDER_FORMATTING;NO;CELL_BORDER_COLOR;;CELL_BORDER_STYLE;;text_alignment;NO;horizontal_alignment;;vertical_alignment;;indent;;text_orientation;;text_control;;cell_protection;NO;hide_cells;;lock_cells;)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="JURIDICTION" ATTR_TYPE="string(10,version;1;number_format_string;;font;;font_color;;background_color;;pattern_color;;pattern_style;;CELL_BORDER_FORMATTING;NO;CELL_BORDER_COLOR;;CELL_BORDER_STYLE;;text_alignment;NO;horizontal_alignment;;vertical_alignment;;indent;;text_orientation;;text_control;;cell_protection;NO;hide_cells;;lock_cells;)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="RESOURCE_FORMAT" ATTR_TYPE="string(20,version;1;number_format_string;;font;;font_color;;background_color;;pattern_color;;pattern_style;;CELL_BORDER_FORMATTING;NO;CELL_BORDER_COLOR;;CELL_BORDER_STYLE;;text_alignment;NO;horizontal_alignment;;vertical_alignment;;indent;;text_orientation;;text_control;;cell_protection;NO;hide_cells;;lock_cells;)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="BROKEN_LINK_PROBLEM" ATTR_TYPE="string(30,version;1;number_format_string;;font;;font_color;;background_color;;pattern_color;;pattern_style;;CELL_BORDER_FORMATTING;NO;CELL_BORDER_COLOR;;CELL_BORDER_STYLE;;text_alignment;NO;horizontal_alignment;;vertical_alignment;;indent;;text_orientation;;text_control;;cell_protection;NO;hide_cells;;lock_cells;)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="BROKEN_LINK_STATUS_DATE" ATTR_TYPE="date(26,version;1;number_format_string;;font;;font_color;;background_color;;pattern_color;;pattern_style;;CELL_BORDER_FORMATTING;NO;CELL_BORDER_COLOR;;CELL_BORDER_STYLE;;text_alignment;FME_DISCLOSURE_OPEN;horizontal_alignment;center;vertical_alignment;;indent;;text_orientation;;text_control;;cell_protection;NO;hide_cells;;lock_cells;)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="URL" ATTR_TYPE="string(200,version;1;number_format_string;;font;;font_color;;background_color;;pattern_color;;pattern_style;;CELL_BORDER_FORMATTING;NO;CELL_BORDER_COLOR;;CELL_BORDER_STYLE;;text_alignment;NO;horizontal_alignment;;vertical_alignment;;indent;;text_orientation;;text_control;;cell_protection;NO;hide_cells;;lock_cells;)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_advanced_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_drop_sheet" PARM_VALUE="No"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_field_names_out" PARM_VALUE="Yes"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_freeze_end_row" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_layer_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_names_are_positions" PARM_VALUE="No"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_offset_col" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_offset_row" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_protect_sheet" PARM_VALUE="NO"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_protect_sheet_level" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_protect_sheet_password" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_protect_sheet_permissions" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_raster_type" PARM_VALUE="PNG"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_row_id_column" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_rowcolumn_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_sheet_order" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_start_col" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_start_row" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_table_writer_mode" PARM_VALUE="Insert"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_trunc_sheet" PARM_VALUE="No"/>
+#!     <DEFLINE_PARM PARM_NAME="xlsx_truncate_group" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="broken_links_issues"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER="broken_links"
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="3"
+#!   FEAT_GEOMTYPE="All"
+#!   POSITION="3507.8152713273862 -2155.1378679376726"
+#!   BOUNDING_RECT="3507.8152713273862 -2155.1378679376726 762.00106825772946 71"
+#!   ORDER="500000000000427.13"
+#!   COLLAPSED="false"
+#!   KEYWORD="POSTGRES_2"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="metadata_uuid" ATTR_TYPE="uuid,PrimaryKey" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="url" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="resource_format" ATTR_TYPE="varchar(80),BTree" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="broken_link_problem" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="broken_link_status" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="broken_link_status_date" ATTR_TYPE="date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="juridiction" ATTR_TYPE="text" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_advanced_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_configuration_common_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_configuration_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_feature_operation" PARM_VALUE="INSERT"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_match_columns" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_selection_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_selection_method" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_table_handling" PARM_VALUE="CREATE_IF_MISSING"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_where_builder_clause" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_allow_serial_writing" PARM_VALUE="NO"/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_vacuum_analyze" PARM_VALUE="NO"/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="broken_links_issues"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER="broken_links"
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="4"
+#!   FEAT_GEOMTYPE="postgres_none"
+#!   POSITION="-968.65208544319307 -2158.2594520242137"
+#!   BOUNDING_RECT="-968.65208544319307 -2158.2594520242137 762.00106825772946 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="POSTGRES_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="true"
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="metadata_uuid" ATTR_TYPE="uuid,PrimaryKey" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="url" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="resource_format" ATTR_TYPE="varchar(80),BTREE" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="broken_link_problem" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="broken_link_status" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="broken_link_status_date" ATTR_TYPE="date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="juridiction" ATTR_TYPE="text" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="date_email" ATTR_TYPE="date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_query_settings_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_sql_statement" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_sql_where_clause" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="cl_broken_link_problem"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER="broken_links"
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="5"
+#!   FEAT_GEOMTYPE="postgres_none"
+#!   POSITION="-1035.6520854431931 -2023.4788964408799"
+#!   BOUNDING_RECT="-1035.6520854431931 -2023.4788964408799 829.00106825772946 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="POSTGRES_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="true"
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="problem" ATTR_TYPE="varchar(80),PrimaryKey" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="description_en" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="description_fr" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_query_settings_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_sql_statement" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_sql_where_clause" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="cl_resource_format"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER="broken_links"
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="6"
+#!   FEAT_GEOMTYPE="postgres_none"
+#!   POSITION="-958.65208544319307 -1903.0834053431117"
+#!   BOUNDING_RECT="-958.65208544319307 -1903.0834053431117 752.00106825772946 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="POSTGRES_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="true"
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="format" ATTR_TYPE="varchar(80),PrimaryKey" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="description_en" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="description_fr" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_query_settings_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_sql_statement" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="postgres_sql_where_clause" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <SERVICES>
+#! <SERVICE
+#!   NAME="fmejobsubmitter"
+#! >
+#! <PROPERTIES>
+#! <PROPERTY
+#!   CATEGORY="FMEUSERPROPDATA"
+#!   NAME="ADVANCED"
+#!   VALUE=""
+#! />
+#! <PROPERTY
+#!   CATEGORY="FMEUSERPROPDATA"
+#!   NAME="FAILURE_TOPICS"
+#!   VALUE=""
+#! />
+#! <PROPERTY
+#!   CATEGORY="FMEUSERPROPDATA"
+#!   NAME="HTTP_DATASET"
+#!   VALUE=""
+#! />
+#! <PROPERTY
+#!   CATEGORY="FMEUSERPROPDATA"
+#!   NAME="NOTIFICATION_WRITER"
+#!   VALUE=""
+#! />
+#! <PROPERTY
+#!   CATEGORY="FMEUSERPROPDATA"
+#!   NAME="SUCCESS_TOPICS"
+#!   VALUE=""
+#! />
+#! </PROPERTIES>
+#! </SERVICE>
+#! </SERVICES>
+#! <REPOSITORY
+#!   NAME="Broken_Links"
+#! />
+#! <ITEM
+#!   NAME="BrokenLinks_Postgres_Final_test.fmw"
+#! />
+#! <MODIFICATIONS>
+#! <MODIFICATION
+#!   UID=":DatasetMgr_XLSXW_1:DestDataset_XLSXW_1"
+#!   VALUE="$(OUT_XLS_ERREUR_FORMAT)"
+#! />
+#! <MODIFICATION
+#!   UID=":DatasetMgr_XLSXW_1:XLSXW_OUT_TEMPLATEFILE_XLSXW_1"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SERVER_DEST_DIR"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_BACKUP"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_DASHBOARD"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_DATA"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_ENGINE"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_LOG"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_SYSTEM"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_SHAREDRESOURCE_TEMP"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:FME_TOPIC_MESSAGE"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:LOG_FILE"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":GlobalParameterMgr:OUT_XLS_ERREUR_FORMAT"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":WBDoc:DESTINATION_ROUTING_FILE"
+#!   VALUE=""
+#! />
+#! <MODIFICATION
+#!   UID=":WBDoc:LOG_FILE"
+#!   VALUE="$(LOG_FILE)"
+#! />
+#! <MODIFICATION
+#!   UID=":WBDoc:SOURCE_ROUTING_FILE"
+#!   VALUE=""
+#! />
+#! </MODIFICATIONS>
+#! <WRITER_DATASETS>
+#! <DATASET
+#!   NAME="XLSXW_1"
+#!   OVERRIDE="-XLSXW_1_DATASET"
+#!   DATASET="XLSXW_1/erreur_format.xlsx"
+#! />
+#! </WRITER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE IN_CHOICE_JURIDICTION &quot;&quot;%Fed%ProvTer%Tout IN_CHOICE_JURIDICTION:"
+#!   DEFAULT_VALUE="Tout"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED IN_OUT_POSTGRES_CONNECTION FMT:POSTGRES%FAMILY:PostgreSQL IN_OUT_POSTGRES_CONNECTION:"
+#!   DEFAULT_VALUE="FGP_data_AWS"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI FILENAME OUT_XLS_ERREUR_FORMAT Excel_Files(*.xlsx;*.xlsm;*.xls)|*.xlsx;*.xlsm;*.xls|All_files(*)|* OUT_XLS_ERREUR_FORMAT:"
+#!   DEFAULT_VALUE="$(FME_SHAREDRESOURCE_DATA)/Broken_Links/erreur_format.xlsx"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL FILENAME LOG_FILE Log_Files_(*.log)|*.log|All_Files_(*.*)|*.* Log File:"
+#!   DEFAULT_VALUE="$(FME_SHAREDRESOURCE_DATA)/Broken_Links/detection.log"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI LOOKUP_CHOICE_OR_ATTR Env_Catalogue FGP-STAGING-INTERNE,https:&lt;solidus&gt;&lt;solidus&gt;staging.gcgeo.gc.ca&lt;solidus&gt;geonetwork&lt;solidus&gt;srv&lt;solidus&gt;eng&lt;solidus&gt;csw?%FGP-STAGING-EXTERNE,https:&lt;solidus&gt;&lt;solidus&gt;maps-staging.canada.ca&lt;solidus&gt;geonetwork&lt;solidus&gt;srv&lt;solidus&gt;eng&lt;solidus&gt;csw?%FGP_PROD_INTERNE,https:&lt;solidus&gt;&lt;solidus&gt;gcgeo.gc.ca&lt;solidus&gt;geonetwork&lt;solidus&gt;srv&lt;solidus&gt;eng&lt;solidus&gt;csw?%FGP_PROD_EXTERNE,https:&lt;solidus&gt;&lt;solidus&gt;maps.canada.ca&lt;solidus&gt;geonetwork&lt;solidus&gt;srv&lt;solidus&gt;eng&lt;solidus&gt;csw?%CUSTOM-CSW&lt;solidus&gt;CKAN,Manuel%OPENDATA-STAGING,https:&lt;solidus&gt;&lt;solidus&gt;staging.open.canada.ca&lt;solidus&gt;data&lt;solidus&gt;api&lt;solidus&gt;action%OPENDATA-PROD,https:&lt;solidus&gt;&lt;solidus&gt;open.canada.ca&lt;solidus&gt;data&lt;solidus&gt;api&lt;solidus&gt;action Env_Catalogue:"
+#!   DEFAULT_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;maps.canada.ca&lt;solidus&gt;geonetwork&lt;solidus&gt;srv&lt;solidus&gt;eng&lt;solidus&gt;csw?"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="56"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pour éviter les conflits d&apos;écriture&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2730.2145656558614 -1822.5692247792513"
+#!   TOP_LEFT="2730.2145656558614 -1822.5692247792513"
+#!   BOTTOM_RIGHT="3377.8935774598558 -1921.3199122861263"
+#!   BOUNDING_RECT="2730.2145656558614 -1822.5692247792513 647.6790118039944 98.750687506875067"
+#!   ORDER="500000000000378.13"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="17"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="74"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;_juridiction = IN_CHOICE_JURIDICTION&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;afin de filter en fonction de la juridiction des liens brisés&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="88.224880572350287 -2328.1355157729795"
+#!   TOP_LEFT="88.224880572350287 -2328.1355157729795"
+#!   BOTTOM_RIGHT="683.6005860058599 -2558.1375157929797"
+#!   BOUNDING_RECT="88.224880572350287 -2328.1355157729795 595.37570543350967 230.0020000200002"
+#!   ORDER="500000000000416.13"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="75"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="99"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Des enregistrements de liens brisés pourront être mis à FIXED si &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;_juridiction = Tout &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ou&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;_juridiction = IN_JURIDICTION i.e. la juridiction qui a été déterminée par BrokenLinks_Detector&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="722.77791007076712 -2406.2612970307923"
+#!   TOP_LEFT="722.77791007076712 -2406.2612970307923"
+#!   BOTTOM_RIGHT="1429.0507488408214 -2811.2650470682929"
+#!   BOUNDING_RECT="722.77791007076712 -2406.2612970307923 706.27283877005425 405.00375003750037"
+#!   ORDER="500000000000412.13"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="76"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="92"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Seules les erreurs de format seront aussi écrites dans la lable broken_links_issues&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2659.531803651369 -1098.0524563683894"
+#!   TOP_LEFT="2659.531803651369 -1098.0524563683894"
+#!   BOTTOM_RIGHT="3444.0448571152374 -1240.5535813796396"
+#!   BOUNDING_RECT="2659.531803651369 -1098.0524563683894 784.51305346386835 142.50112501125011"
+#!   ORDER="500000000000420.13"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="82"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;_juridiction = IN_CHOICE_JURIDICTION&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Il faut re-créer une variable pour le paramètre IN_CHOICE_JURIDICTION car le custom BrokenLinks_Detector ne le retourne pas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="108.30608162232588 13.853062730245142"
+#!   TOP_LEFT="108.30608162232588 13.853062730245142"
+#!   BOTTOM_RIGHT="907.87014656838915 -84.897624776629925"
+#!   BOUNDING_RECT="108.30608162232588 13.853062730245142 799.56406494606324 98.750687506875067"
+#!   ORDER="500000000000411.13"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="79"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="83"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Des enregistrements de liens brisés sont créés si&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;_juridiction = Tout &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ou&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;_juridiction = IN_JURIDICTION i.e. la juridiction qui a été déterminée par BrokenLinks_Detector&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="813.14085175773266 -425.8169094734036"
+#!   TOP_LEFT="813.14085175773266 -425.8169094734036"
+#!   BOTTOM_RIGHT="1561.77052299821 -743.31978450215388"
+#!   BOUNDING_RECT="813.14085175773266 -425.8169094734036 748.62967124047736 317.50287502875028"
+#!   ORDER="500000000000412.13"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="77"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="57"
+#!   NAME="Tables de la base de donéées Broken_links"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-1142.433458100197 -1757.6878217296885"
+#!   ORDER="500000000000375.13"
+#!   PALETTE_COLOR="Color5"
+#!   BOTTOM_RIGHT="-8.7785045293856001 -2308.7747639951945"
+#!   BOUNDING_RECT="-1142.433458100197 -1757.6878217296885 1133.6549535708114 551.08694226550585"
+#!   STICKY="false"
+#!   COLOUR="0.59607843137254901,0.91764705882352937,0.72549019607843135,1"
+#!   CONTENTS=""
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="58"
+#!   NAME="Écriture des broken_links"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="3468.9340498613819 -2000.0703497905015"
+#!   ORDER="500000000000376.13"
+#!   PALETTE_COLOR="Color5"
+#!   BOTTOM_RIGHT="4356.5759050033375 -2329.5391895713296"
+#!   BOUNDING_RECT="3468.9340498613819 -2000.0703497905015 887.6418551419556 329.46883978082803"
+#!   STICKY="false"
+#!   COLOUR="0.59607843137254901,0.91764705882352937,0.72549019607843135,1"
+#!   CONTENTS=""
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="59"
+#!   NAME="Écriture des erreurs de format"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="3462.4235680898973 -1208.7479101952126"
+#!   ORDER="500000000000377.13"
+#!   PALETTE_COLOR="Error"
+#!   BOTTOM_RIGHT="4212.4235680898973 -1532.8527233535851"
+#!   BOUNDING_RECT="3462.4235680898973 -1208.7479101952126 750 324.10481315837251"
+#!   STICKY="false"
+#!   COLOUR="0.96078431372549022,0.29019607843137257,0.29019607843137257,1"
+#!   CONTENTS=""
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="72"
+#!   NAME="Filtrer selon la juridiction"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="52.083854171874748 -2019.4788964408799"
+#!   ORDER="500000000000418.13"
+#!   PALETTE_COLOR="Color4"
+#!   BOTTOM_RIGHT="1468.1136394697278 -2880.1434247675807"
+#!   BOUNDING_RECT="52.083854171874748 -2019.4788964408799 1416.0297852978531 860.66452832670075"
+#!   STICKY="false"
+#!   COLOUR="0.85098039215686272,0.92941176470588238,0.60392156862745094,1"
+#!   CONTENTS=""
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="73"
+#!   NAME="Traitement des erreurs"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="1975.9312176455096 -973.31702483691492"
+#!   ORDER="500000000000419.13"
+#!   PALETTE_COLOR="Color4"
+#!   BOTTOM_RIGHT="4274.1312829794961 -1777.3615236152359"
+#!   BOUNDING_RECT="1975.9312176455096 -973.31702483691492 2298.2000653339865 804.0444987783211"
+#!   STICKY="false"
+#!   COLOUR="0.85098039215686272,0.92941176470588238,0.60392156862745094,1"
+#!   CONTENTS=""
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="84"
+#!   NAME="Données Fédérales ou P/T"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-1866.5152637920935 -258.95000386557172"
+#!   ORDER="500000000000142.25"
+#!   PALETTE_COLOR="Color5"
+#!   BOTTOM_RIGHT="-22.456000436019622 -741.08348709888855"
+#!   BOUNDING_RECT="-1866.5152637920935 -258.95000386557172 1844.0592633560739 482.13348323331689"
+#!   STICKY="true"
+#!   COLOUR="0.59607843137254901,0.91764705882352937,0.72549019607843135,1"
+#!   CONTENTS="89 63 85 55 91 53 93 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="Logger"
+#!   VERSION="4"
+#!   POSITION="2050.0158968523237 -1109.5535813796396"
+#!   BOUNDING_RECT="2050.0158968523237 -1109.5535813796396 456.00106825772946 71"
+#!   ORDER="500000000000005"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LOG_FEATURE" PARM_VALUE="LOG_ONLY"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="ERREUR&lt;space&gt;DE&lt;space&gt;FORMAT&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;IN_METADATA_UUID&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;FORMAT&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;IN_RESOURCE_FORMAT&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSG_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEVERITY" PARM_VALUE="INFO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Unknown_Format"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="Logger"
+#!   VERSION="4"
+#!   POSITION="2050.0158968523237 -1592.5225159269139"
+#!   BOUNDING_RECT="2050.0158968523237 -1592.5225159269139 435.00106825772946 71"
+#!   ORDER="500000000000007"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_listMerge{}.broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LOG_FEATURE" PARM_VALUE="LOG_ONLY"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="ERREUR&lt;space&gt;DE&lt;space&gt;STATUT&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;IN_METADATA_UUID&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;STATUT&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;_listMerge&lt;opencurly&gt;0&lt;closecurly&gt;.broken_link_status&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSG_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEVERITY" PARM_VALUE="INFO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Unknown_Statut"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="Sorter"
+#!   VERSION="2"
+#!   POSITION="2768.2145656558614 -2000.0703497905015"
+#!   BOUNDING_RECT="2768.2145656558614 -2000.0703497905015 454 71"
+#!   ORDER="500000000000331.13"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="SORTED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="metadata_uuid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="resource_format" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_problem" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_db_operation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="SORT_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="metadata_uuid ALPHA ASCENDING"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="Creator"
+#!   VERSION="5"
+#!   POSITION="-1775.7799781589256 -1375.3660572062124"
+#!   BOUNDING_RECT="-1775.7799781589256 -1375.3660572062124 430 71"
+#!   ORDER="500000000000334.13"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="CREATED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATEND" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="COORDS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CRE_ATTR" PARM_VALUE="_creation_instance"/>
+#!     <XFORM_PARM PARM_NAME="GEOM" PARM_VALUE="&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;&lt;space&gt;encoding=&lt;quote&gt;US_ASCII&lt;quote&gt;&lt;space&gt;standalone=&lt;quote&gt;no&lt;quote&gt;&lt;space&gt;?&lt;gt&gt;&lt;lt&gt;geometry&lt;space&gt;dimension=&lt;quote&gt;2&lt;quote&gt;&lt;gt&gt;&lt;lt&gt;null&lt;solidus&gt;&lt;gt&gt;&lt;lt&gt;&lt;solidus&gt;geometry&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GEOMTYPE" PARM_VALUE="Geometry Object"/>
+#!     <XFORM_PARM PARM_NAME="NUM" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Creator_6"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="21"
+#!   TYPE="Catalogue Reader"
+#!   VERSION="1"
+#!   POSITION="-1333.3893265620309 -906.24751976233483"
+#!   BOUNDING_RECT="-1333.3893265620309 -906.24751976233483 574 71"
+#!   ORDER="500000000000335.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#!   OUTPUT_FT_ORDER="Résultats%UUID_invalide%MetadonnéesNonTrouvées"
+#! >
+#!     <OUTPUT_FEAT NAME="Résultats"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UUID_invalide"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="MetadonnéesNonTrouvées"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_type_requete" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="root_url" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ErreurUUID" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="CKAN_FILTER" PARM_VALUE="fq=collection:fgp"/>
+#!     <XFORM_PARM PARM_NAME="CSW_ANYTEXT_FILTER" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_CSW_LIST_NAME" PARM_VALUE="DefaultNoList{}"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_CSW_SCHEMA" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_CSW_VERSION" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_URL" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_URL_BY_ID_ATT_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_URL_CSW_TYPENAMES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FILTER_PROVIDER" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="IDENTIFIANT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SOURCE_URL" PARM_VALUE="$(Env_Catalogue)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Catalogue_Reader_6"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="Logger"
+#!   VERSION="4"
+#!   POSITION="2050.0158968523237 -1446.2850762319986"
+#!   BOUNDING_RECT="2050.0158968523237 -1446.2850762319986 454 71"
+#!   ORDER="500000000000336.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LOG_FEATURE" PARM_VALUE="LOG_ONLY"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="ERREUR&lt;space&gt;DE&lt;space&gt;TYPE&lt;space&gt;D&lt;apos&gt;ERREUR&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;IN_METADATA_UUID&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;ERREUR&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;IN_TYPE_ERREUR&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSG_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEVERITY" PARM_VALUE="INFO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="23"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="2050.0158968523237 -1285.2614919338935"
+#!   BOUNDING_RECT="2050.0158968523237 -1285.2614919338935 454 71"
+#!   ORDER="500000000000342.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; broken_link_status_date SET_TO &lt;at&gt;DateTimeNow&lt;openparen&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="24"
+#!   TYPE="DateTimeConverter"
+#!   VERSION="3"
+#!   POSITION="2739.7115110618333 -1285.2614919338935"
+#!   BOUNDING_RECT="2739.7115110618333 -1285.2614919338935 475.99257282254348 71"
+#!   ORDER="500000000000343.13"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DATETIME_ATTR" PARM_VALUE="broken_link_status_date"/>
+#!     <XFORM_PARM PARM_NAME="IN_FORMAT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUT_FORMAT" PARM_VALUE="%Y-%m-%d"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PASSTHROUGH" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REFERENCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REFERENCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPAIR_INPUT" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="TEST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_INPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_INPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_RESULT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateTimeConverter_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="60"
+#!   TYPE="PeuplerBrokenLinks_FIXED_v3"
+#!   VERSION="1"
+#!   POSITION="1549.3495098885419 -1959.8869630384959"
+#!   BOUNDING_RECT="1549.3495098885419 -1959.8869630384959 633 71"
+#!   ORDER="500000000000379.13"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUT_BROKEN_LINKS_ISSUES"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="metadata_uuid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="resource_format" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_problem" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_db_operation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="BROKEN_LINK_PROBLEM" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;broken_link_problem&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="BROKEN_LINK_STATUS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;broken_link_status&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="BROKEN_LINK_STATUS_DATE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;broken_link_status_date&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="IN_JURIDICTION" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;IN_JURIDICTION&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="IN_METADATA_UUID" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;IN_METADATA_UUID&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="IN_RESOURCE_FORMAT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;IN_RESOURCE_FORMAT&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="IN_TYPE_ERREUR" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;IN_TYPE_ERREUR&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="IN_URL_ERRONE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;IN_URL_ERRONE&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JURIDICTION" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;juridiction&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="METADATA_UUID" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;metadata_uuid&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESOURCE_FORMAT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;resource_format&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;url&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PeuplerBrokenLinks_FIXED_v3"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="62"
+#!   TYPE="PeuplerBrokenLinks_v10"
+#!   VERSION="1"
+#!   POSITION="1024.94537076509 -1218.0958883273045"
+#!   BOUNDING_RECT="1024.94537076509 -1218.0958883273045 633 71"
+#!   ORDER="500000000000380.13"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#!   OUTPUT_FT_ORDER="Unknown_Format%Unknown_Type_Erreur%Unknown_Statut%OUT_BROKEN_LINKS_ISSUES"
+#! >
+#!     <OUTPUT_FEAT NAME="Unknown_Format"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Unknown_Type_Erreur"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Unknown_Statut"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_listMerge{}.broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="OUT_BROKEN_LINKS_ISSUES"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="metadata_uuid" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="resource_format" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="url" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_problem" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="fme_db_operation" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="juridiction" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PeuplerBrokenLinks_v10"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="75"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="88.224880572350287 -2158.2594520242137"
+#!   BOUNDING_RECT="88.224880572350287 -2158.2594520242137 454 71"
+#!   ORDER="500000000000410.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_uuid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="resource_format" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_problem" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="date_email" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _juridiction SET_TO $(IN_CHOICE_JURIDICTION)"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_6"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="76"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="813.14085175773266 -2158.2594520242137"
+#!   BOUNDING_RECT="813.14085175773266 -2158.2594520242137 454 71"
+#!   ORDER="500000000000414.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_uuid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="resource_format" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_problem" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="date_email" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_uuid" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="resource_format" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_problem" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="broken_link_status_date" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="juridiction" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="date_email" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1 OR 2"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;juridiction&lt;closeparen&gt; = &lt;at&gt;Value&lt;openparen&gt;_juridiction&lt;closeparen&gt;&#10;TEST &lt;at&gt;Value&lt;openparen&gt;_juridiction&lt;closeparen&gt; = Tout"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="48"
+#!   TYPE="BrokenLinks_Detector_python"
+#!   VERSION="1"
+#!   POSITION="88.224880572350287 -1195.3660572062124"
+#!   BOUNDING_RECT="88.224880572350287 -1195.3660572062124 611.00106825772946 71"
+#!   ORDER="500000000000421.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="Broken_Links"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_METADATA_UUID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_RESOURCE_FORMAT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_URL_ERRONE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_TYPE_ERREUR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BrokenLinks_Detector_python"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="50"
+#!   TYPE="FeatureHolder"
+#!   VERSION="0"
+#!   POSITION="183.48646152163531 -971.45045342432445"
+#!   BOUNDING_RECT="183.48646152163531 -971.45045342432445 454 71"
+#!   ORDER="500000000000422.13"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureHolder"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="53"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="-1182.9851281165411 -428.95000386557206"
+#!   BOUNDING_RECT="-1182.9851281165411 -428.95000386557206 454 71"
+#!   ORDER="500000000000138.25"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="CASE_SENSITIVE_TEST &lt;at&gt;Value&lt;openparen&gt;MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString&lt;closeparen&gt; CONTAINS_REGEX Canada"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="CASE_SENSITIVE_TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="55"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="-526.45600043601894 -368.95000386557206"
+#!   BOUNDING_RECT="-526.45600043601894 -368.95000386557206 454 71"
+#!   ORDER="500000000000139.25"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; IN_JURIDICTION SET_TO Fed"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_17"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="63"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="-526.45600043601894 -575.08348709888878"
+#!   BOUNDING_RECT="-526.45600043601894 -575.08348709888878 454 71"
+#!   ORDER="500000000000140.25"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; IN_JURIDICTION SET_TO ProvTer"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_18"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="77"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="183.48646152163531 -697.90844460016444"
+#!   BOUNDING_RECT="183.48646152163531 -697.90844460016444 454 71"
+#!   ORDER="500000000000399.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1 OR 2"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="CASE_INSENSITIVE_TEST &lt;at&gt;Value&lt;openparen&gt;IN_JURIDICTION&lt;closeparen&gt; = &lt;at&gt;Value&lt;openparen&gt;_juridiction&lt;closeparen&gt;&#10;CASE_INSENSITIVE_TEST &lt;at&gt;Value&lt;openparen&gt;_juridiction&lt;closeparen&gt; = Tout"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="CASE_INSENSITIVE_TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="79"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="183.48646152163531 -488.95000386557206"
+#!   BOUNDING_RECT="183.48646152163531 -488.95000386557206 454 71"
+#!   ORDER="500000000000410.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_juridiction" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="IN_JURIDICTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _juridiction SET_TO $(IN_CHOICE_JURIDICTION)"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="86"
+#!   TYPE="Terminator"
+#!   VERSION="3"
+#!   POSITION="-633.50973645790896 -1120.2614653439673"
+#!   BOUNDING_RECT="-633.50973645790896 -1120.2614653439673 454 71"
+#!   ORDER="500000000000425.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="UUID&lt;space&gt;invalide&lt;space&gt;ou&lt;space&gt;non&lt;space&gt;trouv&lt;u00e9&gt;&lt;space&gt;dans&lt;space&gt;l&lt;apos&gt;environnement&lt;space&gt;s&lt;u00e9&gt;lectionn&lt;u00e9&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Terminator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="89"
+#!   TYPE="AttributeExposer"
+#!   VERSION="1"
+#!   POSITION="-1775.7799781589256 -428.95000386557206"
+#!   BOUNDING_RECT="-1775.7799781589256 -428.95000386557206 454 71"
+#!   ORDER="500000000000426.13"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="csw_version" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_typenames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_filter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.file_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="csw_search_criteria" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.MD_Metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OpenMapsFilter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="result.results" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="78"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="75"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="66"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 3 IN_BROKEN_LINKS_ISSUES"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="65"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 2 IN_TYPE_ERREUR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="64"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 1 IN_RESOURCE_FORMAT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="101"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="21"
+#!   SOURCE_PORT_DESC="fo 0 CREATED"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="41"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 SORTED"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="87"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="86"
+#!   SOURCE_PORT_DESC="fo 1 UUID_invalide"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="23"
+#!   TARGET_NODE="24"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="42"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="fo 0 Broken_Links"
+#!   TARGET_PORT_DESC="fi 0 IN_ERREUR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="51"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="60"
+#!   SOURCE_PORT_DESC="fo 0 Broken_Links"
+#!   TARGET_PORT_DESC="fi 0 IN_ERREUR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="54"
+#!   SOURCE_NODE="50"
+#!   TARGET_NODE="48"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Input_Metadata_2"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="85"
+#!   SOURCE_NODE="53"
+#!   TARGET_NODE="55"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="94"
+#!   SOURCE_NODE="55"
+#!   TARGET_NODE="79"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="61"
+#!   SOURCE_NODE="60"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUT_BROKEN_LINKS_ISSUES"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="68"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 Unknown_Format"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="69"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 0 Unknown_Format"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="95"
+#!   SOURCE_NODE="63"
+#!   TARGET_NODE="79"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="80"
+#!   SOURCE_NODE="75"
+#!   TARGET_NODE="76"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="81"
+#!   SOURCE_NODE="76"
+#!   TARGET_NODE="60"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 1 IN_BROKEN_LINKS_ISSUES"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="97"
+#!   SOURCE_NODE="77"
+#!   TARGET_NODE="50"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="96"
+#!   SOURCE_NODE="79"
+#!   TARGET_NODE="77"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="91"
+#!   SOURCE_NODE="89"
+#!   TARGET_NODE="53"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="90"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="89"
+#!   SOURCE_PORT_DESC="fo 0 R&lt;u00e9&gt;sultats"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="93"
+#!   SOURCE_NODE="53"
+#!   TARGET_NODE="63"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="67"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="fo 3 OUT_BROKEN_LINKS_ISSUES"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="88"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="86"
+#!   SOURCE_PORT_DESC="fo 2 Metadonn&lt;u00e9&gt;esNonTrouv&lt;u00e9&gt;es"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="70"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 1 Unknown_Type_Erreur"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="71"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 2 Unknown_Statut"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! <ATTR_LINK
+#!   IDENTIFIER="65578"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="ao 0 0 OUTPUT"
+#!   TARGET_PORT_DESC="4"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="262186"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="ao 0 4 OUTPUT"
+#!   TARGET_PORT_DESC="3"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="131114"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="ao 0 1 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="327722"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="ao 0 2 OUTPUT"
+#!   TARGET_PORT_DESC="2"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="196650"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="ao 0 5 OUTPUT"
+#!   TARGET_PORT_DESC="1"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="393258"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="ao 0 3 OUTPUT"
+#!   TARGET_PORT_DESC="5"
+#! />
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 37
+GUI IGNORE SourceDataset_POSTGRES_1,POSTGRES_IN_FME_CONNECTION_GROUP_POSTGRES_1,POSTGRES_IN_FME_GROUP_NAMED1_POSTGRES_1,POSTGRES_IN_WHERE_CLAUSE_POSTGRES_1,POSTGRES_IN_ADVANCED_POSTGRES_1,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1,POSTGRES_IN_BEGIN_SQL_POSTGRES_1,POSTGRES_IN_END_SQL_POSTGRES_1,POSTGRES_IN_SCHEMAS_FOR_TABLE_LISTING_POSTGRES_1,DestDataset_XLSXW_1,XLSXW_OUT_FME_GROUP_NAMED1_XLSXW_1,XLSXW_OUT_OVERWRITE_FILE_XLSXW_1,XLSXW_OUT_TEMPLATEFILE_XLSXW_1,XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1,XLSXW_OUT_REMOVE_UNCHANGED_TEMPLATE_SHEET_XLSXW_1,DestDataset_POSTGRES_2,POSTGRES_OUT_FME_CONNECTION_GROUP_POSTGRES_2,POSTGRES_OUT_ADVANCED_POSTGRES_2,POSTGRES_OUT_BULK_COPY_POSTGRES_2,POSTGRES_OUT_START_TRANSACTION_POSTGRES_2,POSTGRES_OUT_TRANSACTION_INTERVAL_POSTGRES_2,POSTGRES_OUT_BEGIN_SQL_POSTGRES_2,POSTGRES_OUT_END_SQL_POSTGRES_2
+DEFAULT_MACRO IN_CHOICE_JURIDICTION Tout
+GUI CHOICE IN_CHOICE_JURIDICTION ""%Fed%ProvTer%Tout IN_CHOICE_JURIDICTION:
+DEFAULT_MACRO IN_OUT_POSTGRES_CONNECTION FGP_data_AWS
+GUI NAMED_DB_CONNECTION_ENCODED IN_OUT_POSTGRES_CONNECTION FMT:POSTGRES%FAMILY:PostgreSQL IN_OUT_POSTGRES_CONNECTION:
+DEFAULT_MACRO OUT_XLS_ERREUR_FORMAT $(FME_SHAREDRESOURCE_DATA)/Broken_Links/erreur_format.xlsx
+GUI FILENAME OUT_XLS_ERREUR_FORMAT Excel_Files(*.xlsx;*.xlsm;*.xls)|*.xlsx;*.xlsm;*.xls|All_files(*)|* OUT_XLS_ERREUR_FORMAT:
+DEFAULT_MACRO LOG_FILE $(FME_SHAREDRESOURCE_DATA)/Broken_Links/detection.log
+GUI OPTIONAL FILENAME LOG_FILE Log_Files_(*.log)|*.log|All_Files_(*.*)|*.* Log File:
+DEFAULT_MACRO Env_Catalogue https:<solidus><solidus>maps.canada.ca<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw?
+GUI LOOKUP_CHOICE Env_Catalogue FGP-STAGING-INTERNE,https:<solidus><solidus>staging.gcgeo.gc.ca<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw?%FGP-STAGING-EXTERNE,https:<solidus><solidus>maps-staging.canada.ca<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw?%FGP_PROD_INTERNE,https:<solidus><solidus>gcgeo.gc.ca<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw?%FGP_PROD_EXTERNE,https:<solidus><solidus>maps.canada.ca<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw?%CUSTOM-CSW<solidus>CKAN,Manuel%OPENDATA-STAGING,https:<solidus><solidus>staging.open.canada.ca<solidus>data<solidus>api<solidus>action%OPENDATA-PROD,https:<solidus><solidus>open.canada.ca<solidus>data<solidus>api<solidus>action Env_Catalogue:
+INCLUDE [ if {{$(IN_CHOICE_JURIDICTION)} == {}} { puts_real {Parameter 'IN_CHOICE_JURIDICTION' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(IN_OUT_POSTGRES_CONNECTION)} == {}} { puts_real {Parameter 'IN_OUT_POSTGRES_CONNECTION' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(OUT_XLS_ERREUR_FORMAT)} == {}} { puts_real {Parameter 'OUT_XLS_ERREUR_FORMAT' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(Env_Catalogue)} == {}} { puts_real {Parameter 'Env_Catalogue' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} POSTGRES
+MULTI_READER_KEYWORD{0} POSTGRES_1
+MULTI_READER_GEN_DIRECTIVES{0} WHERE_CLAUSE,,SCHEMAS_FOR_TABLE_LISTING,broken_links,FEATURES_PER_FETCH,10000,NAMED_CONNECTION,fgp_data_dev_interne,CREATE_FEATURE_TABLES_FROM_DATA,Yes,UPDATE_FEATURE_TYPES,yes,TABLELIST,broken_links.broken_links_issues<space>broken_links.cl_broken_link_problem<space>broken_links.cl_resource_format,EXPOSE_ATTRS_GROUP,,POSTGRES_EXPOSE_FORMAT_ATTRS,,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,_MERGE_SCHEMAS,YES,END_SQL,,BEGIN_SQL,,READ_TIME_WITH_TIMEZONE,Yes,ADVANCED,
+WRITER_TYPE MULTI_WRITER
+MULTI_WRITER_DATASET_ORDER BY_ID
+MULTI_WRITER_FIRST_WRITER_ID 0
+MULTI_WRITER_TYPE{0} XLSXW
+MULTI_WRITER_KEYWORD{0} XLSXW_1
+MULTI_WRITER_TYPE{1} POSTGRES
+MULTI_WRITER_KEYWORD{1} POSTGRES_2
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "POSTGRES_1"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER POSTGRES POSTGRES_1
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_POSTGRES_1 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER POSTGRES POSTGRES_1
+DEFAULT_MACRO SourceDataset_POSTGRES_1 $(IN_OUT_POSTGRES_CONNECTION)
+GUI NAMED_DB_CONNECTION_ENCODED SourceDataset_POSTGRES_1 FMT:POSTGRES Connection:
+DEFAULT_MACRO POSTGRES_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_POSTGRES_1 Yes
+POSTGRES_1_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS "$(POSTGRES_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_POSTGRES_1)"
+DEFAULT_MACRO POSTGRES_IN_READ_TIME_WITH_TIMEZONE_POSTGRES_1 Yes
+POSTGRES_1_READ_TIME_WITH_TIMEZONE "$(POSTGRES_IN_READ_TIME_WITH_TIMEZONE_POSTGRES_1)"
+DEFAULT_MACRO POSTGRES_IN_FME_CONNECTION_GROUP_POSTGRES_1 
+GUI OPTIONAL DISCLOSUREGROUP POSTGRES_IN_FME_CONNECTION_GROUP_POSTGRES_1 POSTGRES_IN_NAMED_CONNECTION%POSTGRES_IN_SCHEMAS_FOR_TABLE_LISTING_POSTGRES_1 Database Connection
+DEFAULT_MACRO POSTGRES_IN_FME_GROUP_NAMED1_POSTGRES_1 
+GUI OPTIONAL DISCLOSUREGROUP POSTGRES_IN_FME_GROUP_NAMED1_POSTGRES_1 POSTGRES_IN_TABLELIST%POSTGRES_IN_WHERE_CLAUSE_POSTGRES_1 Constraints
+DEFAULT_MACRO POSTGRES_IN_WHERE_CLAUSE_POSTGRES_1 
+POSTGRES_1_WHERE_CLAUSE "$(POSTGRES_IN_WHERE_CLAUSE_POSTGRES_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG POSTGRES_IN_WHERE_CLAUSE_POSTGRES_1 MODE,WHERE;FORMAT,POSTGRES WHERE Clause:
+DEFAULT_MACRO POSTGRES_IN_EXPOSE_ATTRS_GROUP_POSTGRES_1 
+POSTGRES_1_EXPOSE_ATTRS_GROUP "$(POSTGRES_IN_EXPOSE_ATTRS_GROUP_POSTGRES_1)"
+DEFAULT_MACRO POSTGRES_IN_ADVANCED_POSTGRES_1 
+GUI OPTIONAL DISCLOSUREGROUP POSTGRES_IN_ADVANCED_POSTGRES_1 POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1%POSTGRES_IN_BEGIN_SQL_POSTGRES_1%POSTGRES_IN_END_SQL_POSTGRES_1 Advanced
+DEFAULT_MACRO POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1 10000
+POSTGRES_1_FEATURES_PER_FETCH "$(POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1)"
+GUI FLOAT POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1 Number Of Records To Fetch At A Time
+DEFAULT_MACRO POSTGRES_IN_BEGIN_SQL_POSTGRES_1 
+POSTGRES_1_BEGIN_SQL "$(POSTGRES_IN_BEGIN_SQL_POSTGRES_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG POSTGRES_IN_BEGIN_SQL_POSTGRES_1 MODE,SQL;FORMAT,POSTGRES SQL To Run Before Read
+DEFAULT_MACRO POSTGRES_IN_END_SQL_POSTGRES_1 
+POSTGRES_1_END_SQL "$(POSTGRES_IN_END_SQL_POSTGRES_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG POSTGRES_IN_END_SQL_POSTGRES_1 MODE,SQL;FORMAT,POSTGRES SQL To Run After Read
+DEFAULT_MACRO POSTGRES_IN_CREATE_FEATURE_TABLES_FROM_DATA_POSTGRES_1 Yes
+POSTGRES_1_CREATE_FEATURE_TABLES_FROM_DATA "$(POSTGRES_IN_CREATE_FEATURE_TABLES_FROM_DATA_POSTGRES_1)"
+# ============================================================================ 
+DEFAULT_MACRO POSTGRES_IN_ATTRIBUTE_READING_POSTGRES_1 DEFLINE_ATTRS
+POSTGRES_1_ATTRIBUTE_READING "$(POSTGRES_IN_ATTRIBUTE_READING_POSTGRES_1)"
+# ============================================================================ 
+POSTGRES_1_GENERATE_FME_BUILD_NUM 20200
+DEFAULT_MACRO POSTGRES_IN_SCHEMAS_FOR_TABLE_LISTING_POSTGRES_1 broken_links
+GUI OPTIONAL TEXT POSTGRES_IN_SCHEMAS_FOR_TABLE_LISTING_POSTGRES_1 Schemas for Tables:
+POSTGRES_1_SCHEMAS_FOR_TABLE_LISTING $(POSTGRES_IN_SCHEMAS_FOR_TABLE_LISTING_POSTGRES_1)
+POSTGRES_1_DATASET "$(SourceDataset_POSTGRES_1)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "XLSXW_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER XLSXW XLSXW_1
+# ============================================================================
+# First get the dataset for the database. For Excel, it's the file name.
+# For now we'll use whatever they had when they generated this mapping file,
+# and not reprompt
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_XLSXW_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER XLSXW XLSXW_1
+DEFAULT_MACRO DestDataset_XLSXW_1 $(OUT_XLS_ERREUR_FORMAT)
+GUI FILENAME DestDataset_XLSXW_1 Excel_Files(*.xlsx;*.xlsm;*.xls)|*.xlsx;*.xlsm;*.xls|All_files(*)|* Destination Microsoft Excel File:
+# ============================================================================
+DEFAULT_MACRO XLSXW_OUT_FME_GROUP_NAMED1_XLSXW_1 
+GUI OPTIONAL DISCLOSUREGROUP XLSXW_OUT_FME_GROUP_NAMED1_XLSXW_1 XLSXW_OUT_OVERWRITE_FILE_XLSXW_1%XLSXW_OUT_TEMPLATEFILE_XLSXW_1%XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1%XLSXW_OUT_REMOVE_UNCHANGED_TEMPLATE_SHEET_XLSXW_1 Writer Parameters
+# Whether or not to overwrite the file
+DEFAULT_MACRO XLSXW_OUT_OVERWRITE_FILE_XLSXW_1 Yes
+XLSXW_1_OVERWRITE_FILE "$(XLSXW_OUT_OVERWRITE_FILE_XLSXW_1)"
+GUI ACTIVECHOICE XLSXW_OUT_OVERWRITE_FILE_XLSXW_1 Yes%No,XLSXW_OUT_TEMPLATEFILE_XLSXW_1,XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1,XLSXW_OUT_REMOVE_UNCHANGED_TEMPLATE_SHEET_XLSXW_1,XLSXW_OUT_+TEMPLATEFILE+<Unused> Overwrite Existing File:
+# Template file option
+DEFAULT_MACRO XLSXW_OUT_TEMPLATEFILE_XLSXW_1 
+XLSXW_1_TEMPLATEFILE "$(XLSXW_OUT_TEMPLATEFILE_XLSXW_1)"
+GUI OPTIONAL FILENAME XLSXW_OUT_TEMPLATEFILE_XLSXW_1 Excel_Files(*.xlsx;*.xlsm;*.xls)|*.xlsx;*.xlsm;*.xls|Excel_Workbook_2007(*.xlsx)|*.xlsx|Excel_Macro_Workbook(*.xlsm)|*.xlsm|Excel_Workbook_Pre_2007(*.xls)|*.xls|All_files(*)|* Template File:
+GUI LOOKUP XLSXW_OUT_TEMPLATEFILE_XLSXW_1 <Unused>, 
+DEFAULT_MACRO XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1 
+XLSXW_1_TEMPLATE_SHEET "$(XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1)"
+GUI OPTIONAL DYNAMIC_SINGLE_SELECT XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1 $[XLSXW_OUT_TEMPLATEFILE_XLSXW_1],_FORMAT_OVERRIDE_,XLSXR,RETRIEVE_ALL_TABLE_NAMES,Yes,IGNORE_ALL_NAMED_RANGES,Yes Template Sheet:
+GUI LOOKUP XLSXW_OUT_TEMPLATE_SHEET_XLSXW_1 <Unused>, 
+DEFAULT_MACRO XLSXW_OUT_REMOVE_UNCHANGED_TEMPLATE_SHEET_XLSXW_1 No
+XLSXW_1_REMOVE_UNCHANGED_TEMPLATE_SHEET "$(XLSXW_OUT_REMOVE_UNCHANGED_TEMPLATE_SHEET_XLSXW_1)"
+GUI CHOICE XLSXW_OUT_REMOVE_UNCHANGED_TEMPLATE_SHEET_XLSXW_1 Yes%No Remove Template Sheet if Unchanged:
+# ============================================================================
+# Parameters whose values will be percolated to the feature types, but will not
+# remain as writer level settings
+# Default to not drop feature type first
+DEFAULT_MACRO XLSXW_OUT_DROP_TABLE_XLSXW_1 No
+XLSXW_1_DROP_TABLE "$(XLSXW_OUT_DROP_TABLE_XLSXW_1)"
+# Default to not truncate feature type first (removeallcelldata,retainformatting/headers,etc.)
+DEFAULT_MACRO XLSXW_OUT_TRUNCATE_TABLE_XLSXW_1 No
+XLSXW_1_TRUNCATE_TABLE "$(XLSXW_OUT_TRUNCATE_TABLE_XLSXW_1)"
+# Maintain compatibility with lenient attrName.* matching
+DEFAULT_MACRO XLSXW_OUT_STRICT_SCHEMA_ADDITIONAL_ATTRIBUTE_MATCHING_XLSXW_1 yes
+XLSXW_1_STRICT_SCHEMA_ADDITIONAL_ATTRIBUTE_MATCHING "$(XLSXW_OUT_STRICT_SCHEMA_ADDITIONAL_ATTRIBUTE_MATCHING_XLSXW_1)"
+# Default to write out the field names
+DEFAULT_MACRO XLSXW_OUT_FIELD_NAMES_OUT_XLSXW_1 Yes
+XLSXW_1_FIELD_NAMES_OUT "$(XLSXW_OUT_FIELD_NAMES_OUT_XLSXW_1)"
+# Default writer mode
+DEFAULT_MACRO XLSXW_OUT_WRITER_MODE_XLSXW_1 Insert
+XLSXW_1_WRITER_MODE "$(XLSXW_OUT_WRITER_MODE_XLSXW_1)"
+# Default raster writing type
+DEFAULT_MACRO XLSXW_OUT_RASTER_FORMAT_XLSXW_1 PNG
+XLSXW_1_RASTER_FORMAT "$(XLSXW_OUT_RASTER_FORMAT_XLSXW_1)"
+# ============================================================================
+# Choose excel file protection mode
+DEFAULT_MACRO XLSXW_OUT_PROTECT_SHEET_XLSXW_1 NO
+XLSXW_1_PROTECT_SHEET "$(XLSXW_OUT_PROTECT_SHEET_XLSXW_1)"
+# Whether or not to enable sheet password protection
+DEFAULT_MACRO XLSXW_OUT_PROTECT_SHEET_PASSWORD_XLSXW_1 <Unused>
+XLSXW_1_PROTECT_SHEET_PASSWORD "$(XLSXW_OUT_PROTECT_SHEET_PASSWORD_XLSXW_1)"
+# Which kind of protection level
+DEFAULT_MACRO XLSXW_OUT_PROTECT_SHEET_LEVEL_XLSXW_1 <Unused>
+XLSXW_1_PROTECT_SHEET_LEVEL "$(XLSXW_OUT_PROTECT_SHEET_LEVEL_XLSXW_1)"
+# Which kind of specific permissions will be enabled
+DEFAULT_MACRO XLSXW_OUT_PROTECT_SHEET_PERMISSIONS_XLSXW_1 <Unused>
+XLSXW_1_PROTECT_SHEET_PERMISSIONS "$(XLSXW_OUT_PROTECT_SHEET_PERMISSIONS_XLSXW_1)"
+# ============================================================================
+# Opt in for destination dataset type vs format type validation
+DEFAULT_MACRO XLSXW_OUT_DESTINATION_DATASETTYPE_VALIDATION_XLSXW_1 Yes
+XLSXW_1_DESTINATION_DATASETTYPE_VALIDATION "$(XLSXW_OUT_DESTINATION_DATASETTYPE_VALIDATION_XLSXW_1)"
+DEFAULT_MACRO XLSXW_OUT_COORDINATE_SYSTEM_GRANULARITY_XLSXW_1 FEATURE
+XLSXW_1_COORDINATE_SYSTEM_GRANULARITY "$(XLSXW_OUT_COORDINATE_SYSTEM_GRANULARITY_XLSXW_1)"
+# ============================================================================ 
+XLSXW_1_GENERATE_FME_BUILD_NUM 20200
+XLSXW_1_DATASET "$(DestDataset_XLSXW_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "POSTGRES_2"
+#! END_WB_HEADER
+#! START_DEST_HEADER POSTGRES POSTGRES_2
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_POSTGRES_2 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER POSTGRES POSTGRES_2
+DEFAULT_MACRO DestDataset_POSTGRES_2 $(IN_OUT_POSTGRES_CONNECTION)
+GUI NAMED_DB_CONNECTION_ENCODED DestDataset_POSTGRES_2 FMT:POSTGRES Connection:
+DEFAULT_MACRO POSTGRES_OUT_STRICT_TEMPORAL_TYPE_HANDLING_POSTGRES_2 Yes
+POSTGRES_2_STRICT_TEMPORAL_TYPE_HANDLING "$(POSTGRES_OUT_STRICT_TEMPORAL_TYPE_HANDLING_POSTGRES_2)"
+DEFAULT_MACRO POSTGRES_OUT_FME_CONNECTION_GROUP_POSTGRES_2 
+GUI OPTIONAL DISCLOSUREGROUP POSTGRES_OUT_FME_CONNECTION_GROUP_POSTGRES_2 POSTGRES_OUT_NAMED_CONNECTION Database Connection
+DEFAULT_MACRO POSTGRES_OUT_ADVANCED_POSTGRES_2 
+GUI OPTIONAL DISCLOSUREGROUP POSTGRES_OUT_ADVANCED_POSTGRES_2 POSTGRES_OUT_BULK_COPY_POSTGRES_2%POSTGRES_OUT_START_TRANSACTION_POSTGRES_2%POSTGRES_OUT_TRANSACTION_INTERVAL_POSTGRES_2%POSTGRES_OUT_BEGIN_SQL_POSTGRES_2%POSTGRES_OUT_END_SQL_POSTGRES_2 Advanced
+DEFAULT_MACRO POSTGRES_OUT_BULK_COPY_POSTGRES_2 YES
+POSTGRES_2_BULK_COPY "$(POSTGRES_OUT_BULK_COPY_POSTGRES_2)"
+GUI CHOICE POSTGRES_OUT_BULK_COPY_POSTGRES_2 YES%NO Bulk Insert
+DEFAULT_MACRO POSTGRES_OUT_START_TRANSACTION_POSTGRES_2 0
+POSTGRES_2_START_TRANSACTION "$(POSTGRES_OUT_START_TRANSACTION_POSTGRES_2)"
+GUI TEXT POSTGRES_OUT_START_TRANSACTION_POSTGRES_2 Starting Feature:
+DEFAULT_MACRO POSTGRES_OUT_TRANSACTION_INTERVAL_POSTGRES_2 1000
+POSTGRES_2_TRANSACTION_INTERVAL "$(POSTGRES_OUT_TRANSACTION_INTERVAL_POSTGRES_2)"
+GUI TEXT POSTGRES_OUT_TRANSACTION_INTERVAL_POSTGRES_2 Features Per Transaction
+DEFAULT_MACRO POSTGRES_OUT_BEGIN_SQL_POSTGRES_2 
+POSTGRES_2_BEGIN_SQL "$(POSTGRES_OUT_BEGIN_SQL_POSTGRES_2)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG POSTGRES_OUT_BEGIN_SQL_POSTGRES_2 MODE,SQL;FORMAT,POSTGRES SQL To Run Before Write
+DEFAULT_MACRO POSTGRES_OUT_END_SQL_POSTGRES_2 
+POSTGRES_2_END_SQL "$(POSTGRES_OUT_END_SQL_POSTGRES_2)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG POSTGRES_OUT_END_SQL_POSTGRES_2 MODE,SQL;FORMAT,POSTGRES SQL To Run After Write
+DEFAULT_MACRO POSTGRES_OUT_COORDINATE_SYSTEM_GRANULARITY_POSTGRES_2 FEATURE
+POSTGRES_2_COORDINATE_SYSTEM_GRANULARITY "$(POSTGRES_OUT_COORDINATE_SYSTEM_GRANULARITY_POSTGRES_2)"
+# ============================================================================ 
+POSTGRES_2_GENERATE_FME_BUILD_NUM 20200
+POSTGRES_2_DATASET "$(DestDataset_POSTGRES_2)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+WRITER_TYPE NULL
+WRITER_KEYWORD WBROUTER_OUT
+WBROUTER_OUT_DATASET null
+
+LOG_END_BANNER 
+LOG_END_BANNER *** All writer output has been redirected to the Data Inspector ***
+LOG_END_BANNER 
+LOG_FILENAME "$(LOG_FILE)"
+LOG_APPEND NO
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+DEFAULT_MACRO DATASET_KEYWORD_POSTGRES_1 POSTGRES_1
+DEFAULT_MACRO DATASET_KEYWORD_XLSXW_1 XLSXW_1
+DEFAULT_MACRO DATASET_KEYWORD_POSTGRES_2 POSTGRES_2
+# -------------------------------------------------------------------------
+
+POSTGRES_1_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME Detection_BrokenLinks
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+
+INCLUDE [ if {[info exists env(FME_TEMP)] && [file isdirectory $env(FME_TEMP)]} {set gVisualizerTemp $env(FME_TEMP)}  elseif {[info exists env(TEMP)] && [file isdirectory $env(TEMP)]}  {set gVisualizerTemp $env(TEMP)}  elseif { $tcl_platform(platform) == "unix" } {set gVisualizerTemp "/tmp"} else {set gVisualizerTemp c:};  regsub -all {[ ,&]} {$(WORKSPACE_NAME)} {_} wsname; set gVisualizerTemp $gVisualizerTemp/${wsname}_[clock format [clock seconds] -format %H%M%S];  puts "MACRO WORKSPACE_TEMP_DIR $gVisualizerTemp"; 
+MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/inspector.ffs
+MACRO VISUALIZER_SCHEMA_FILE $(WORKSPACE_TEMP_DIR)/inspector.fsc
+MACRO VISUALIZER_CREATE_SPATIAL_INDEX YES
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   MULTI_READER_KEYWORD $(DATASET_KEYWORD_POSTGRES_1)   INPUT FEATURE_TYPE *    ROUTE POSTGRES POSTGRES_1::broken_links.cl_resource_format multi_reader_keyword,$(DATASET_KEYWORD_POSTGRES_1) TO FME_GENERIC ::broken_links.cl_resource_format ALIAS_GEOMETRY    ROUTE POSTGRES POSTGRES_1::broken_links.cl_broken_link_problem multi_reader_keyword,$(DATASET_KEYWORD_POSTGRES_1) TO FME_GENERIC ::broken_links.cl_broken_link_problem ALIAS_GEOMETRY    ROUTE POSTGRES POSTGRES_1::broken_links.broken_links_issues multi_reader_keyword,$(DATASET_KEYWORD_POSTGRES_1) TO FME_GENERIC ::broken_links.broken_links_issues ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+POSTGRES_1_MERGE_DEF POSTGRES_1::broken_links.cl_resource_format EXACT broken_links.cl_resource_format DEFLINE postgres_type,postgres_none,postgres_sql_where_clause,,postgres_sql_statement,,format,varchar<openparen>80<closeparen><comma>PrimaryKey,description_en,varchar<openparen>80<closeparen>,description_fr,varchar<openparen>80<closeparen>
+POSTGRES_1_MERGE_DEF POSTGRES_1::broken_links.cl_broken_link_problem EXACT broken_links.cl_broken_link_problem DEFLINE postgres_type,postgres_none,postgres_sql_where_clause,,postgres_sql_statement,,problem,varchar<openparen>80<closeparen><comma>PrimaryKey,description_en,varchar<openparen>80<closeparen>,description_fr,varchar<openparen>80<closeparen>
+POSTGRES_1_MERGE_DEF POSTGRES_1::broken_links.broken_links_issues EXACT broken_links.broken_links_issues DEFLINE postgres_type,postgres_none,postgres_sql_where_clause,,postgres_sql_statement,,metadata_uuid,uuid<comma>PrimaryKey,url,varchar<openparen>80<closeparen>,resource_format,varchar<openparen>80<closeparen><comma>BTree,broken_link_problem,varchar<openparen>80<closeparen>,broken_link_status,varchar<openparen>80<closeparen>,broken_link_status_date,date,juridiction,text,date_email,date
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "broken_links.broken_links_issues(POSTGRES_1) Splitter"    INPUT FEATURE_TYPE broken_links.broken_links_issues    OUTPUT FEATURE_TYPE broken_links.broken_links_issues_POSTGRES_1_0_Z5JP2K/SFak=    OUTPUT FEATURE_TYPE broken_links.broken_links_issues_POSTGRES_1_1_S9KZO2uJevk=
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "broken_links.cl_broken_link_problem(POSTGRES_1) Splitter"    INPUT FEATURE_TYPE broken_links.cl_broken_link_problem    OUTPUT FEATURE_TYPE broken_links.cl_broken_link_problem_POSTGRES_1
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "broken_links.cl_resource_format(POSTGRES_1) Splitter"    INPUT FEATURE_TYPE broken_links.cl_resource_format    OUTPUT FEATURE_TYPE broken_links.cl_resource_format_POSTGRES_1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+Tcl2 proc Creator_6_CoordSysRemover {} {   global FME_CoordSys;   set FME_CoordSys {}; }
+MACRO Creator_6_XML     NOT_ACTIVATED
+MACRO Creator_6_CLASSIC NOT_ACTIVATED
+MACRO Creator_6_2D3D    2D_GEOMETRY
+MACRO Creator_6_COORDS  <Unused>
+INCLUDE [ if { {Geometry Object} == {Geometry Object} } {            puts {MACRO Creator_6_XML *} } ]
+INCLUDE [ if { {Geometry Object} == {2D Coordinate List} } {            puts {MACRO Creator_6_2D3D 2D_GEOMETRY};            puts {MACRO Creator_6_CLASSIC *} } ]
+INCLUDE [ if { {Geometry Object} == {3D Coordinate List} } {            puts {MACRO Creator_6_2D3D 3D_GEOMETRY};            puts {MACRO Creator_6_CLASSIC *} } ]
+INCLUDE [ if { {Geometry Object} == {2D Min/Max Box} } {            set comment {                We need to turn the COORDS which are                    minX minY maxX maxY                into a full polygon list of coordinates            };            set splitCoords [split [string trim {<Unused>}]];            if { [llength $splitCoords] > 4} {               set trimmedCoords {};               foreach item $splitCoords { if { $item != {} } {lappend trimmedCoords $item} };               set splitCoords $trimmedCoords;            };            if { [llength $splitCoords] != 4 } {                error {Creator_6: Coordinate list is expected to be a space delimited list of four numbers as 'minx miny maxx maxy' - `<Unused>' is invalid};            };            set minX [lindex $splitCoords 0];            set minY [lindex $splitCoords 1];            set maxX [lindex $splitCoords 2];            set maxY [lindex $splitCoords 3];            puts "MACRO Creator_6_COORDS $minX $minY $minX $maxY $maxX $maxY $maxX $minY $minX $minY";            puts {MACRO Creator_6_2D3D 2D_GEOMETRY};            puts {MACRO Creator_6_CLASSIC *} } ]
+FACTORY_DEF $(Creator_6_XML) CreationFactory    FACTORY_NAME Creator_6_XML_Creator    CREATE_AT_END no    OUTPUT FEATURE_TYPE _____CREATED______        @Geometry(FROM_ENCODED_STRING,<lt>?xml<space>version=<quote>1.0<quote><space>encoding=<quote>US_ASCII<quote><space>standalone=<quote>no<quote><space>?<gt><lt>geometry<space>dimension=<quote>2<quote><gt><lt>null<solidus><gt><lt><solidus>geometry<gt>)
+FACTORY_DEF $(Creator_6_CLASSIC) CreationFactory    FACTORY_NAME Creator_6_CLASSIC_Creator    $(Creator_6_2D3D) $(Creator_6_COORDS)    CREATE_AT_END no    OUTPUT FEATURE_TYPE _____CREATED______
+FACTORY_DEF * TeeFactory    FACTORY_NAME Creator_6_Cloner    INPUT FEATURE_TYPE _____CREATED______        @Tcl2(Creator_6_CoordSysRemover)        @CoordSys()    NUMBER_OF_COPIES 1    COPY_NUMBER_ATTRIBUTE "_creation_instance"    OUTPUT FEATURE_TYPE Creator_6_CREATED        fme_feature_type Creator_6
+FACTORY_DEF * BranchingFactory   FACTORY_NAME "Creator_6_CREATED Brancher -1 101"   INPUT FEATURE_TYPE Creator_6_CREATED   TARGET_FACTORY "$(WB_CURRENT_CONTEXT)_CREATOR_BRANCH_TARGET"   MAXIMUM_COUNT None   OUTPUT PASSED FEATURE_TYPE *
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WB_CURRENT_CONTEXT)_CREATOR_BRANCH_TARGET"   INPUT FEATURE_TYPE *  OUTPUT FEATURE_TYPE *
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Catalogue_Reader_6 Input Input Collector"   INPUT FEATURE_TYPE Creator_6_CREATED   OUTPUT FEATURE_TYPE Catalogue_Reader_6_Input
+MACRO Catalogue_Reader_WORKSPACE_NAME Catalogue_Reader_6
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_XFORMER_NAME Catalogue_Reader_6
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_FILTER_PROVIDER 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_SOURCE_URL $(Env_Catalogue)
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CUSTOM_URL 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CKAN_FILTER fq=collection:fgp
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CUSTOM_CSW_SCHEMA 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CUSTOM_CSW_VERSION 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CUSTOM_URL_CSW_TYPENAMES 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CUSTOM_CSW_LIST_NAME DefaultNoList{}
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_IDENTIFIANT 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CUSTOM_URL_BY_ID_ATT_NAME 
+MACRO $(Catalogue_Reader_WORKSPACE_NAME)_CSW_ANYTEXT_FILTER 
+INCLUDE_CUSTOM_TRANSFORMER_VER Catalogue Reader:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Catalogue_Reader_6 UUID_invalide Output Renamer/Nuker"   INPUT FEATURE_TYPE Catalogue_Reader_6_UUID_invalide   OUTPUT FEATURE_TYPE Catalogue_Reader_6_UUID_invalide
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Catalogue_Reader_6 Résultats Output Renamer/Nuker"   INPUT FEATURE_TYPE Catalogue_Reader_6_Résultats   OUTPUT FEATURE_TYPE Catalogue_Reader_6_Résultats
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Catalogue_Reader_6 MetadonnéesNonTrouvées Output Renamer/Nuker"   INPUT FEATURE_TYPE Catalogue_Reader_6_MetadonnéesNonTrouvées   OUTPUT FEATURE_TYPE Catalogue_Reader_6_MetadonnéesNonTrouvées
+# -------------------------------------------------------------------------
+# The default behaviour is to abort on any feature entering the transformer.
+# If Workbench has set the _WB_BYPASS_TERMINATION macro to a value of "Yes",
+# then the features will instead be passed through with a feature type of
+# __WB_BYPASS_TERMINATOR__, which Workbench will send to a visualizer or
+# somesuch.
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TestFactory    FACTORY_NAME Terminator    INPUT  FEATURE_TYPE Catalogue_Reader_6_UUID_invalide    INPUT  FEATURE_TYPE Catalogue_Reader_6_MetadonnéesNonTrouvées    TEST "$(_WB_BYPASS_TERMINATION)" == Yes    OUTPUT PASSED FEATURE_TYPE __WB_BYPASS_TERMINATOR__       @SupplyAttributes(_wb_termination_feature_type,@FeatureType())       @SupplyAttributes(ENCODED,_wb_termination_message,"UUID<space>invalide<space>ou<space>non<space>trouv<u00e9><space>dans<space>l<apos>environnement<space>s<u00e9>lectionn<u00e9><lf>")       @SupplyAttributes(_wb_termination_xformer,"Terminator")       @SupplyAttributes(_wb_termination_feature,Yes)    OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED,"UUID<space>invalide<space>ou<space>non<space>trouv<u00e9><space>dans<space>l<apos>environnement<space>s<u00e9>lectionn<u00e9><lf>")
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeExposer    INPUT  FEATURE_TYPE Catalogue_Reader_6_Résultats    OUTPUT FEATURE_TYPE AttributeExposer_OUTPUT
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Tester    INPUT  FEATURE_TYPE AttributeExposer_OUTPUT    CASE_SENSITIVE_TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>MD_Metadata.contact.CI_ResponsibleParty.organisationName.CharacterString<closeparen>,Tester)" CONTAINS_REGEX Canada ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Tester_PASSED    OUTPUT FAILED FEATURE_TYPE Tester_FAILED
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_18    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE Tester_FAILED    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "IN_JURIDICTION" "SET_TO" "ProvTer" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_18_OUTPUT
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_17    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE Tester_PASSED    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "IN_JURIDICTION" "SET_TO" "Fed" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_17_OUTPUT
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_4    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE AttributeCreator_17_OUTPUT    INPUT  FEATURE_TYPE AttributeCreator_18_OUTPUT    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_juridiction" "SET_TO" "$(IN_CHOICE_JURIDICTION$encode)" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_4_OUTPUT
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Tester_3    INPUT  FEATURE_TYPE AttributeCreator_4_OUTPUT    CASE_INSENSITIVE_TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>IN_JURIDICTION<closeparen>,Tester_3)" = "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_juridiction<closeparen>,Tester_3)" ENCODED CASE_INSENSITIVE_TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_juridiction<closeparen>,Tester_3)" = Tout ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1 OR 2"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Tester_3_PASSED
+# -------------------------------------------------------------------------
+FACTORY_DEF * SortFactory    FACTORY_NAME FeatureHolder    INPUT  FEATURE_TYPE Tester_3_PASSED    OUTPUT SORTED FEATURE_TYPE FeatureHolder_OUTPUT
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "BrokenLinks_Detector_python Input_Metadata_2 Input Collector"   INPUT FEATURE_TYPE FeatureHolder_OUTPUT   OUTPUT FEATURE_TYPE BrokenLinks_Detector_python_Input_Metadata_2
+MACRO BrokenLinks_Detector_python_WORKSPACE_NAME BrokenLinks_Detector_python
+MACRO $(BrokenLinks_Detector_python_WORKSPACE_NAME)_XFORMER_NAME BrokenLinks_Detector_python
+MACRO $(BrokenLinks_Detector_python_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+INCLUDE_CUSTOM_TRANSFORMER_VER BrokenLinks_Detector_python:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "BrokenLinks_Detector_python Broken_Links Output Renamer/Nuker"   INPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links   OUTPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links
+FACTORY_DEF * TeeFactory   FACTORY_NAME "BrokenLinks_Detector_python Broken_Links Splitter"   INPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links   OUTPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links_0_k5sleeeo6sc=   OUTPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links_1_Gfk2zM2/8EI=
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 IN_ERREUR Input Collector"   INPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links_0_k5sleeeo6sc=   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_IN_ERREUR
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 IN_RESOURCE_FORMAT Input Collector"   INPUT FEATURE_TYPE broken_links.cl_resource_format_POSTGRES_1   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_IN_RESOURCE_FORMAT
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 IN_TYPE_ERREUR Input Collector"   INPUT FEATURE_TYPE broken_links.cl_broken_link_problem_POSTGRES_1   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_IN_TYPE_ERREUR
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 IN_BROKEN_LINKS_ISSUES Input Collector"   INPUT FEATURE_TYPE broken_links.broken_links_issues_POSTGRES_1_1_S9KZO2uJevk=   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_IN_BROKEN_LINKS_ISSUES
+MACRO PeuplerBrokenLinks_v10_WORKSPACE_NAME PeuplerBrokenLinks_v10
+MACRO $(PeuplerBrokenLinks_v10_WORKSPACE_NAME)_XFORMER_NAME PeuplerBrokenLinks_v10
+MACRO $(PeuplerBrokenLinks_v10_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+INCLUDE_CUSTOM_TRANSFORMER_VER PeuplerBrokenLinks_v10:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 Unknown_Format Output Renamer/Nuker"   INPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 OUT_BROKEN_LINKS_ISSUES Output Renamer/Nuker"   INPUT FEATURE_TYPE PeuplerBrokenLinks_v10_OUT_BROKEN_LINKS_ISSUES   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_OUT_BROKEN_LINKS_ISSUES
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 Unknown_Type_Erreur Output Renamer/Nuker"   INPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Type_Erreur   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Type_Erreur
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 Unknown_Statut Output Renamer/Nuker"   INPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Statut   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Statut
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_v10 Unknown_Format Splitter"   INPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format_0_aIELK2CTWLc=   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format_1_z7iqNQ2UgjA=
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} SortFactory    FACTORY_NAME Sorter    INPUT  FEATURE_TYPE PeuplerBrokenLinks_v10_OUT_BROKEN_LINKS_ISSUES    FLUSH_WHEN_GROUPS_CHANGE No    SORT_BY { metadata_uuid ALPHA ASCENDING }    OUTPUT SORTED FEATURE_TYPE Sorter_SORTED
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME Unknown_Statut_Logger    INPUT  FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Statut    OUTPUT FEATURE_TYPE Unknown_Statut_LOGGED                  @Log(ENCODED, "Unknown_Statut:<space>@EvaluateExpression(FDIV,STRING_ENCODED,ERREUR<space>DE<space>STATUT<space>:<space><at>Value<openparen>IN_METADATA_UUID<closeparen><comma><space>STATUT<space>:<space><at>Value<openparen>_listMerge<opencurly>0<closecurly>.broken_link_status<closeparen>,Unknown_Statut)","20","20","",INFO,LOG_ONLY,Unknown_Statut_281a04f9_1447_4439_beb2_c2a8e8cfc1f12)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Unknown_Statut LOGGED Transformer Output Nuker"   INPUT FEATURE_TYPE Unknown_Statut_LOGGED
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME Logger_Logger    INPUT  FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Type_Erreur    OUTPUT FEATURE_TYPE Logger_LOGGED                  @Log(ENCODED, "Logger:<space>@EvaluateExpression(FDIV,STRING_ENCODED,ERREUR<space>DE<space>TYPE<space>D<apos>ERREUR<space>:<space><at>Value<openparen>IN_METADATA_UUID<closeparen><comma><space>ERREUR<space>:<space><at>Value<openparen>IN_TYPE_ERREUR<closeparen>,Logger)","20","20","",INFO,LOG_ONLY,Logger_f36f9ab5_cffc_4cf4_a205_ea5abc416e6a2)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Logger LOGGED Transformer Output Nuker"   INPUT FEATURE_TYPE Logger_LOGGED
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_3    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format_1_z7iqNQ2UgjA=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "broken_link_status_date" "SET_TO" "<at>DateTimeNow<openparen><closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_3_OUTPUT
+# -------------------------------------------------------------------------
+DEFAULT_MACRO DateTimeConverter_2_EXPRESSION_LIST
+INCLUDE [    set repairInput {};    if {{YES} eq {YES}} {       set repairInput "<comma>repair";    };    set inFormat {FME|ISO};    if { {} ne {} } {       set inFormat {};       if { [string first "<quote>" $inFormat] != -1 } {          set inFormat [string map {"<quote>" "<backslash><quote>"} $inFormat];       };    };    set outFormat {%Y-%m-%d};    if { [string first "<quote>" $outFormat] != -1 } {       set outFormat [string map {"<quote>" "<backslash><quote>"} $outFormat];    };    set parmList {};    set attrs {broken_link_status_date};    foreach attr $attrs {       lappend parmList $attr;       set funcAttr $attr;       if { [string first "<quote>" $attr] != -1 }       {          set funcAttr [string map {"<quote>" "<backslash><quote>"} $attr];          append funcAttr "<quote>";          set funcAttr "<quote>$funcAttr";       };       lappend parmList <at>DateTimeFormat<openparen><at>DateTimeParse<openparen><at>Value<openparen>$funcAttr<closeparen><comma><quote>$inFormat<quote>$repairInput<closeparen><comma><quote>$outFormat<quote><closeparen>;    };    puts "MACRO DateTimeConverter_2_EXPRESSION_LIST [join $parmList { }]"; ]
+Tcl2 proc DateTimeConverter_2_f0c5685c_9a4e_499a_b1c6_50a53a11eb0e2_DateTimeConverter {} {    set attrs {broken_link_status_date};    set decodedAttrs {};    set attrVals {};    set attrNulls {};    set attrMissings {};    foreach attr $attrs {       set decodedAttr [FME_DecodeText $attr];       lappend decodedAttrs $decodedAttr;       lappend attrVals [FME_GetAttribute $decodedAttr];       lappend attrNulls [FME_IsAttributeNull $decodedAttr];       lappend attrExists [FME_AttributeExists $decodedAttr];    };    FME_Execute EvaluateExpression ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV $(DateTimeConverter_2_EXPRESSION_LIST) DateTimeConverter_2;    foreach attr $decodedAttrs oldAttrVal $attrVals oldAttrExists $attrExists oldAttrNull $attrNulls {       set newAttrVal [FME_GetAttribute $attr];       if {[string length $newAttrVal] == 0} {          if {{NO} eq {NO} || [string length $oldAttrVal] > 0} {             FME_SetAttribute fme_rejection_code "INVALID_INPUT";             break;          } elseif {!$oldAttrExists} {             FME_UnsetAttributes $attr;          } elseif {!$oldAttrNull} {             FME_SetAttribute $attr {};          };       }    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME DateTimeConverter_2_1    INPUT  FEATURE_TYPE AttributeCreator_3_OUTPUT    OUTPUT FEATURE_TYPE ___TOREJECTOR___       @RenameAttributes(FME_STRICT, ___fme_rejection_code___,fme_rejection_code)       @Tcl2(DateTimeConverter_2_f0c5685c_9a4e_499a_b1c6_50a53a11eb0e2_DateTimeConverter)
+FACTORY_DEF * TestFactory    FACTORY_NAME DateTimeConverter_2_Rejector    INPUT FEATURE_TYPE ___TOREJECTOR___    TEST @Value(fme_rejection_code) != ""    FEATURE_TABLE_SHIM_SUPPORT Yes    OUTPUT PASSED FEATURE_TYPE DateTimeConverter_2_<REJECTED>       @RemoveAttributes(___fme_rejection_code___)    OUTPUT FAILED FEATURE_TYPE DateTimeConverter_2_OUTPUT       @RenameAttributes(FME_STRICT, fme_rejection_code,___fme_rejection_code___)
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TeeFactory FACTORY_NAME DateTimeConverter_2_<Rejected> INPUT FEATURE_TYPE DateTimeConverter_2_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, DateTimeConverter_2<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME Unknown_Format_Logger    INPUT  FEATURE_TYPE PeuplerBrokenLinks_v10_Unknown_Format_0_aIELK2CTWLc=    OUTPUT FEATURE_TYPE Unknown_Format_LOGGED                  @Log(ENCODED, "Unknown_Format:<space>@EvaluateExpression(FDIV,STRING_ENCODED,ERREUR<space>DE<space>FORMAT<space>:<space><at>Value<openparen>IN_METADATA_UUID<closeparen><comma><space>FORMAT<space>:<space><at>Value<openparen>IN_RESOURCE_FORMAT<closeparen>,Unknown_Format)","20","20","",INFO,LOG_ONLY,Unknown_Format_7c0d2487_cb24_47da_b2a6_2a4e61cff2e32)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Unknown_Format LOGGED Transformer Output Nuker"   INPUT FEATURE_TYPE Unknown_Format_LOGGED
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_6    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE broken_links.broken_links_issues_POSTGRES_1_0_Z5JP2K/SFak=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_juridiction" "SET_TO" "$(IN_CHOICE_JURIDICTION$encode)" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_6_OUTPUT
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Tester_2    INPUT  FEATURE_TYPE AttributeCreator_6_OUTPUT    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>juridiction<closeparen>,Tester_2)" = "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_juridiction<closeparen>,Tester_2)" ENCODED TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_juridiction<closeparen>,Tester_2)" = Tout ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1 OR 2"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Tester_2_PASSED
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_FIXED_v3 IN_ERREUR Input Collector"   INPUT FEATURE_TYPE BrokenLinks_Detector_python_Broken_Links_1_Gfk2zM2/8EI=   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_FIXED_v3_IN_ERREUR
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_FIXED_v3 IN_BROKEN_LINKS_ISSUES Input Collector"   INPUT FEATURE_TYPE Tester_2_PASSED   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_FIXED_v3_IN_BROKEN_LINKS_ISSUES
+MACRO PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME PeuplerBrokenLinks_FIXED_v3
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_XFORMER_NAME PeuplerBrokenLinks_FIXED_v3
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_BROKEN_LINK_PROBLEM <at>Value<openparen>broken_link_problem<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_BROKEN_LINK_STATUS <at>Value<openparen>broken_link_status<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_BROKEN_LINK_STATUS_DATE <at>Value<openparen>broken_link_status_date<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_METADATA_UUID <at>Value<openparen>metadata_uuid<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_RESOURCE_FORMAT <at>Value<openparen>resource_format<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_URL <at>Value<openparen>url<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_IN_METADATA_UUID <at>Value<openparen>IN_METADATA_UUID<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_IN_RESOURCE_FORMAT <at>Value<openparen>IN_RESOURCE_FORMAT<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_IN_TYPE_ERREUR <at>Value<openparen>IN_TYPE_ERREUR<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_IN_URL_ERRONE <at>Value<openparen>IN_URL_ERRONE<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_IN_JURIDICTION <at>Value<openparen>IN_JURIDICTION<closeparen>
+MACRO $(PeuplerBrokenLinks_FIXED_v3_WORKSPACE_NAME)_JURIDICTION <at>Value<openparen>juridiction<closeparen>
+INCLUDE_CUSTOM_TRANSFORMER_VER PeuplerBrokenLinks_FIXED_v3:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "PeuplerBrokenLinks_FIXED_v3 OUT_BROKEN_LINKS_ISSUES Output Renamer/Nuker"   INPUT FEATURE_TYPE PeuplerBrokenLinks_FIXED_v3_OUT_BROKEN_LINKS_ISSUES   OUTPUT FEATURE_TYPE PeuplerBrokenLinks_FIXED_v3_OUT_BROKEN_LINKS_ISSUES
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC DateTimeConverter_2_OUTPUT TO XLSXW __GO_TO_FINAL_OUTPUT_ROUTER__ <at>CopyAttributes<openparen>ENCODED<comma>METADATA_UUID<comma>IN_METADATA_UUID<comma>JURIDICTION<comma>IN_JURIDICTION<comma>RESOURCE_FORMAT<comma>IN_RESOURCE_FORMAT<comma>BROKEN_LINK_PROBLEM<comma>IN_TYPE_ERREUR<comma>BROKEN_LINK_STATUS_DATE<comma>broken_link_status_date<comma>URL<comma>IN_URL_ERRONE<closeparen>,multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>FORMAT<lt>space<gt>INVALIDE<closeparen> GEOMETRY    ROUTE FME_GENERIC Sorter_SORTED TO POSTGRES __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,1,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>broken_links.broken_links_issues<closeparen> GEOMETRY    ROUTE FME_GENERIC PeuplerBrokenLinks_FIXED_v3_OUT_BROKEN_LINKS_ISSUES TO POSTGRES __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,1,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>broken_links.broken_links_issues<closeparen> GEOMETRY    ROUTE FME_GENERIC __WB_BYPASS_TERMINATOR__ <at>Tcl2<openparen>FME_StatMessage<space>818062<space><opencurly><at>Value<openparen>_wb_termination_message<closeparen><space><openparen><at>Value<openparen>_wb_termination_xformer<closeparen><closeparen><closecurly><space>818063<closeparen> TO FME_GENERIC __WB_BYPASS_TERMINATOR__ __wb_out_feat_type__,__WB_BYPASS_TERMINATOR__ GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {FORMAT_INVALIDE} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
+FACTORY_DEF {*} InspectorFactory    FACTORY_NAME FORMAT_INVALIDE_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "FORMAT INVALIDE"    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { FORMAT_INVALIDE }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+FACTORY_DEF * RecorderFactory    FACTORY_NAME FORMAT_INVALIDE_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA METADATA_UUID,string<openparen>38<comma>version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon><closeparen>,JURIDICTION,string<openparen>10<comma>version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon><closeparen>,RESOURCE_FORMAT,string<openparen>20<comma>version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon><closeparen>,BROKEN_LINK_PROBLEM,string<openparen>30<comma>version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon><closeparen>,BROKEN_LINK_STATUS_DATE,date<openparen>26<comma>version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>FME_DISCLOSURE_OPEN<semicolon>horizontal_alignment<semicolon>center<semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon><closeparen>,URL,string<openparen>200<comma>version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon><closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+FACTORY_DEF * TeeFactory   FACTORY_NAME "FORMAT_INVALIDE Output Nuker"   INPUT FEATURE_TYPE "FORMAT INVALIDE"
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {broken_links.broken_links_issues} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
+FACTORY_DEF {*} InspectorFactory    FACTORY_NAME broken_links.broken_links_issues_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE broken_links.broken_links_issues    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { broken_links.broken_links_issues }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+FACTORY_DEF * RecorderFactory    FACTORY_NAME broken_links.broken_links_issues_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA metadata_uuid,buffer,url,varchar<openparen>80<closeparen>,resource_format,varchar<openparen>80<closeparen>,broken_link_problem,varchar<openparen>80<closeparen>,broken_link_status,varchar<openparen>80<closeparen>,broken_link_status_date,date,juridiction,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+FACTORY_DEF * TeeFactory   FACTORY_NAME "broken_links.broken_links_issues Output Nuker"   INPUT FEATURE_TYPE broken_links.broken_links_issues
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO FME_LAUNCH_VIEWER_APP NO
+FACTORY_DEF * CreationFactory    FACTORY_NAME VisualizerProcessor   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if {{$(FME_LAUNCH_VIEWER_APP)} == {YES}} {  if [file exists {$(WORKSPACE_TEMP_DIR)}] {set files [glob -nocomplain -directory  {$(WORKSPACE_TEMP_DIR)} -tails *.ffs];   if {[llength $files] == 1} {    set theFile {$(WORKSPACE_TEMP_DIR)/};   append theFile [lindex $files 0];   eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmedatainspector\042 --visualizer --single-application --delete-on-close --no-source-prompt -f FFS \042$theFile\042 & \175;  } elseif { [llength $files] == 0 } {  catch { file delete -force {$(WORKSPACE_TEMP_DIR)} };  } else {  set filesNoExt {}; set lastfile {}; foreach {fileName} [lsort $files] { set fileNoExt [string trimright $fileName {.ffs}]; if [regexp {(.*)_[0-9]*$} $fileNoExt wholething fileNoExtBase] {  if { $fileNoExtBase == $lastfile } { continue } }; set lastfile $fileNoExt; lappend filesNoExt $fileNoExt };  eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmedatainspector\042 --visualizer --single-application --delete-on-close --no-source-prompt -d {$(WORKSPACE_TEMP_DIR)} -a ffs -f FFS $filesNoExt & \175; }; }; }; ")
+FACTORY_DEF * TeeFactory    FACTORY_NAME VisualizerCleaner   INPUT FEATURE_TYPE __NUKEME__
+# -------------------------------------------------------------------------
+XLSXW_1_DEF "FORMAT INVALIDE"   xlsx_drop_sheet              No   xlsx_trunc_sheet             No   xlsx_sheet_order             ""   xlsx_freeze_end_row          ""   xlsx_names_are_positions     No   xlsx_field_names_out         Yes   xlsx_start_col               ""   xlsx_start_row               ""   xlsx_offset_col              ""   xlsx_offset_row              ""   xlsx_raster_type             PNG   xlsx_table_writer_mode       Insert   xlsx_row_id_column           ""   xlsx_protect_sheet           NO   xlsx_protect_sheet_level     <Unused>   xlsx_protect_sheet_password  <Unused>   xlsx_protect_sheet_permissions <Unused>   METADATA_UUID                string(38,version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon>)   JURIDICTION                  string(10,version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon>)   RESOURCE_FORMAT              string(20,version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon>)   BROKEN_LINK_PROBLEM          string(30,version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon>)   BROKEN_LINK_STATUS_DATE      date(26,version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>FME_DISCLOSURE_OPEN<semicolon>horizontal_alignment<semicolon>center<semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon>)   URL                          string(200,version<semicolon>1<semicolon>number_format_string<semicolon><semicolon>font<semicolon><semicolon>font_color<semicolon><semicolon>background_color<semicolon><semicolon>pattern_color<semicolon><semicolon>pattern_style<semicolon><semicolon>CELL_BORDER_FORMATTING<semicolon>NO<semicolon>CELL_BORDER_COLOR<semicolon><semicolon>CELL_BORDER_STYLE<semicolon><semicolon>text_alignment<semicolon>NO<semicolon>horizontal_alignment<semicolon><semicolon>vertical_alignment<semicolon><semicolon>indent<semicolon><semicolon>text_orientation<semicolon><semicolon>text_control<semicolon><semicolon>cell_protection<semicolon>NO<semicolon>hide_cells<semicolon><semicolon>lock_cells<semicolon>)
+# -------------------------------------------------------------------------
+POSTGRES_2_DEF broken_links.broken_links_issues   postgres_type                All   postgres_sql_key_columns     ""   postgres_drop_table          ""   postgres_truncate_table      ""   postgres_mode                ""   fme_feature_operation        INSERT   fme_table_handling           CREATE_IF_MISSING   postgres_vacuum_analyze      NO   postgres_allow_serial_writing NO   metadata_uuid                uuid,PrimaryKey   url                          varchar(80)   resource_format              varchar(80),BTree   broken_link_problem          varchar(80)   broken_link_status           varchar(80)   broken_link_status_date      date   juridiction                  text
+WBROUTER_OUT_DEF "FORMAT INVALIDE"
+WBROUTER_OUT_DEF broken_links.broken_links_issues
